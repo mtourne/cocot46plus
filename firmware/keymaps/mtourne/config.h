@@ -34,10 +34,6 @@
 // Caps Word: press both outer Shift keys together.
 #define BOTH_SHIFTS_TURNS_ON_CAPS_WORD
 
-// Grave Escape (right pink thumb): keep a real Esc while Ctrl is held, so
-// Ctrl+Shift+Esc (Windows Task Manager) still works.
-#define GRAVE_ESC_CTRL_OVERRIDE
-
 // Pointer speed (CPI) steps for the CPI key on FUN. aki27's are
 // { 250, 500, 750, 1000, 1250 } with 1250 as default; ours are lower and finer,
 // with the default (and the saved index 4) at 875, about 30% slower.

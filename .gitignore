@@ -1,3 +1,4 @@
 .qmk/
 *.hex
 Cocot Live.app/
+__pycache__/

@@ -27,20 +27,23 @@ Keycaps are colour-coded from the trackball outwards.
 | | Purple (4) | Pink (3) | Yellow (2) | Green (1) |
 |---|---|---|---|---|
 | Left | Alt | Cmd | Bksp / hold NAV | Delete word / hold NUM |
-| Right | Esc | Tab | Space / hold NAV | Enter / hold NUM |
+| Right | Esc / hold Alt | Tab / hold Cmd | Space / hold NAV | Enter / hold NUM |
 
 For FUN, mash a green key together with the cyan mouse key next to it (on
 either side). The green keys only switch to
 NUM, and the left yellow Bksp to NAV, only after a full hold (190 ms), so a
-quick tap rolled into the next letter never switches layer. Tap and then hold
-Bksp to repeat it.
+quick tap rolled into the next letter never switches layer. The right pink and
+purple keys work the same way: Tab and Esc when tapped, Cmd and Alt after a
+full hold, mirroring the left thumbs so a shortcut on a left-hand letter (⌘Q,
+⌘X, ⌥←) can use the other hand's thumb. Tap and then hold Bksp, Tab or Esc to
+repeat it.
 
 The left thumb deletes (Bksp, delete word) and the right one types (Enter,
 Space). On NAV, the left yellow and green keys are delete word and delete
 line. ⌘Tab, Alt+Tab and ⌘Enter are two-thumb chords: left pink (Cmd) or
 purple (Alt) plus the right key.
 
-The right purple key is Grave Escape: Esc on its own, `` ` `` with Cmd held (⌘\`
+Tapped, the right purple key works like QMK's Grave Escape: Esc on its own, `` ` `` with Cmd held (⌘\`
 cycles windows) and `~` with Shift held. With Ctrl held it stays Esc, so
 Ctrl+Shift+Esc still opens Task Manager on Windows. ⌘⌥Esc (Force Quit) is
 lost; use the Apple menu instead.

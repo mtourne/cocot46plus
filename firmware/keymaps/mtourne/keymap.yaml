@@ -68,9 +68,10 @@ layers:
     h: NAV
     type: th-yellow
   - t: Tab
+    h: $$mdi:apple-keyboard-command$$
     type: th-pink
   - t: Esc
-    s: '` ~'
+    h: $$mdi:apple-keyboard-option$$
     type: th-purple
   - ''
   - $$mdi:mouse-scroll-wheel$$
@@ -144,9 +145,10 @@ layers:
     h: NAV
     type: th-yellow
   - t: Tab
+    h: $$mdi:apple-keyboard-command$$
     type: th-pink
   - t: Esc
-    s: '` ~'
+    h: $$mdi:apple-keyboard-option$$
     type: th-purple
   - ''
   - $$mdi:mouse-scroll-wheel$$

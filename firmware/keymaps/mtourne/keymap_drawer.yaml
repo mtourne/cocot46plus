@@ -45,7 +45,6 @@ parse_config:
     SY_DQUO: '"'
     SY_SLSH: /
     SY_QUES: "?"
-    QK_GESC: {t: Esc, s: "` ~"}
     SY_COMM: ","
     TILD: "~"
     EXLM: "!"

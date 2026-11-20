@@ -86,6 +86,12 @@ enum custom_keycodes {
 #define NV_GUI LGUI(KC_NO)
 #define NV_SFT LSFT(KC_NO)
 
+// Right pink and purple thumbs: Tab and Esc when tapped, Cmd and Alt when
+// held (mirroring the left thumbs), after a full hold only (see
+// get_permissive_hold) so Tab or Esc rolled into a letter stays a tap.
+// Esc keeps Grave Escape's taps, done in process_record_user.
+#define TH_TAB MT(MOD_LGUI, KC_TAB)
+#define TH_ESC MT(MOD_LALT, KC_ESC)
 #define NM_SLSH MT(MOD_LCTL, KC_F13) // tap /
 #define NM_BSLS MT(MOD_LALT, KC_BSLS)
 #define NM_LPRN MT(MOD_LGUI, KC_F14) // tap (
@@ -119,14 +125,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                 KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, // LBRC types / (OS Dvorak)
       KC_LCTL, HQ_A,    HQ_S,    HQ_D,    HQ_F,    KC_G,                 KC_H,    HQ_J,    HQ_K,    HQ_L,    HQ_SCLN, KC_QUOT,
       KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                 KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                        KC_LALT, KC_LGUI, TH_BSPC, TH_DWRD, MS_BTN1,     MS_BTN2, TH_ENT,  TH_SPC,  KC_TAB,  QK_GESC,
+                        KC_LALT, KC_LGUI, TH_BSPC, TH_DWRD, MS_BTN1,     MS_BTN2, TH_ENT,  TH_SPC,  TH_TAB,  TH_ESC, 
                                                    XXXXXXX, MS_BTN3,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
   ),
   [_DVORAK] = LAYOUT(
       KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,                 KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_SLSH,
       KC_LCTL, HD_A,    HD_O,    HD_E,    HD_U,    KC_I,                 KC_D,    HD_H,    HD_T,    HD_N,    HD_S,    KC_MINS,
       KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,                 KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_RSFT,
-                        KC_LALT, KC_LGUI, TH_BSPC, TH_DWRD, MS_BTN1,     MS_BTN2, TH_ENT,  TH_SPC,  KC_TAB,  QK_GESC,
+                        KC_LALT, KC_LGUI, TH_BSPC, TH_DWRD, MS_BTN1,     MS_BTN2, TH_ENT,  TH_SPC,  TH_TAB,  TH_ESC, 
                                                    XXXXXXX, MS_BTN3,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
   ),
   // Right hand: arrows with Home/End above Left/Right (line start/end, which is
@@ -225,7 +231,7 @@ void keyboard_post_init_user(void) {
 // Green thumbs (Bksp, Enter): NUM only after a full hold, so a fast Bksp or
 // Enter rolled into the next letter stays a Bksp or Enter.
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    return keycode != TH_BSPC && keycode != TH_DWRD && keycode != TH_ENT;
+    return keycode != TH_BSPC && keycode != TH_DWRD && keycode != TH_ENT && keycode != TH_TAB && keycode != TH_ESC;
 }
 
 // Flow Tap: a home-row key pressed within FLOW_TAP_TERM of the previous key is
@@ -410,7 +416,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             alt_tab = false;
             unregister_code(KC_LALT);
         }
-    } else if (keycode == KC_TAB && record->event.pressed && user_config.is_windows && thumb_ctrl && !alt_tab) {
+    } else if ((keycode == KC_TAB || (keycode == TH_TAB && record->tap.count)) && record->event.pressed && user_config.is_windows && thumb_ctrl && !alt_tab) {
         alt_tab = true;
         del_mods(MOD_BIT(KC_LCTL));
         register_code(KC_LALT);
@@ -445,6 +451,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     }
 
     // Operator keys: with Shift, send the partner instead (Shift released for it).
+    // Right purple thumb, tapped: Esc, or ` with Cmd held (⌘` cycles windows)
+    // and ~ with Shift held, like Grave Escape. Ctrl held keeps it Esc, so
+    // Ctrl+Shift+Esc still opens Task Manager on Windows.
+    if (keycode == TH_ESC && record->tap.count && record->event.pressed) {
+        uint8_t mods = get_mods();
+        tap_code(!(mods & MOD_MASK_CTRL) && (mods & (MOD_MASK_GUI | MOD_MASK_SHIFT)) ? KC_GRV : KC_ESC);
+        return false;
+    }
+
     if (keycode >= NP_STAR && keycode <= NP_DOT) {
         if (record->event.pressed) {
             uint8_t mods    = get_mods();
