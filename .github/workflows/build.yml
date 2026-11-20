@@ -1,0 +1,17 @@
+# Build the firmware on every push and keep the .hex as a download on the run.
+name: Build firmware
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ghcr.io/qmk/qmk_cli
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cocot46plus_mtourne
+          path: cocot46plus_mtourne.hex

@@ -1,0 +1,114 @@
+parse_config:
+  qmk_remove_keycode_prefix: [KC_, UG_, MS_]
+  qmk_keycode_map:
+    XXXXXXX: ""
+    "NO": ""
+    TAB: Tab
+    ESC: Esc
+    LCTL: Ctrl
+    LALT: Alt
+    LGUI: Cmd
+    LSFT: Shift
+    BSPC: Bksp
+    ENT: Enter
+    SPC: Space
+    CK_UNDO: Undo
+    CK_CUT: Cut
+    CK_COPY: Copy
+    CK_PSTE: Paste
+    CK_REDO: Redo
+    CK_DWRD: Del word
+    F13: /
+    F14: (
+    F15: )
+    NP_STAR: {t: "*", s: /}
+    NP_PLUS: {t: +, s: "-"}
+    NP_PERC: {t: "%", s: ^}
+    NP_DOT: {t: ., s: ","}
+    F17: Del word
+    LCTL(KC_NO): $$mdi:ship-wheel$$
+    LALT(KC_NO): $$mdi:apple-keyboard-option$$
+    LGUI(KC_NO): $$mdi:apple-keyboard-command$$
+    LSFT(KC_NO): $$mdi:apple-keyboard-shift$$
+    CK_DLIN: Del line
+    CK_HOME: Home
+    CK_END: End
+    RSFT: Shift
+    OS_MAC: Mac
+    OS_WIN: Win
+    SY_MINS: "-"
+    SY_UNDS: _
+    SY_EQL: "="
+    SY_LBRC: "["
+    SY_RBRC: "]"
+    SY_QUOT: "'"
+    SY_DQUO: '"'
+    SY_SLSH: /
+    SY_QUES: "?"
+    QK_GESC: {t: Esc, s: "` ~"}
+    SY_COMM: ","
+    TILD: "~"
+    EXLM: "!"
+    AT: "@"
+    HASH: "#"
+    DLR: $
+    PERC: "%"
+    CIRC: ^
+    AMPR: "&"
+    ASTR: "*"
+    LPRN: (
+    RPRN: )
+    PIPE: "|"
+    GRV: "`"
+    BSLS: \
+    QUOT: "'"
+    SCLN: ;
+    COMM: ","
+    DOT: .
+    SLSH: /
+    MINS: "-"
+    LBRC: "["
+    BTN1: "$$mdi:mouse-left-click$$"
+    BTN2: "$$mdi:mouse-right-click$$"
+    BTN3: "$$mdi:mouse-scroll-wheel$$"
+    CK_SCRL: "$$mdi:mouse-move-vertical$$"
+    UP: "↑"
+    DOWN: "↓"
+    LEFT: "←"
+    RGHT: "→"
+    HOME: Home
+    END: End
+    PGUP: PgUp
+    PGDN: PgDn
+    DEL: Del
+    MUTE: Mute
+    VOLD: Vol-
+    VOLU: Vol+
+    MPLY: Play
+    QK_BOOT: Boot
+    CPI_SW: CPI
+    SCRL_SW: Scrl speed
+    SCRL_IN: Scrl invert
+    SCRL_TO: Scrl lock
+    ROT_L15: Rot -15
+    ROT_R15: Rot +15
+    TOGG: LEDs on/off
+    NEXT: RGB mode
+    VALD: RGB -
+    VALU: RGB +
+    CK_HUE: Colour
+    PDF(0): DV
+    PDF(1): QW
+draw_config:
+  glyph_tap_size: 22
+  glyph_hold_size: 16
+  glyph_shifted_size: 14
+  key_w: 60
+  key_h: 56
+  svg_extra_style: |
+    rect.th-green { fill: #d4f0d4; }
+    rect.th-yellow { fill: #fff1a8; }
+    rect.th-purple { fill: #e2d4f7; }
+    rect.th-pink { fill: #fbd3e6; }
+    rect.th-cyan { fill: #c9f0f3; }
+    rect.held { stroke: #444; stroke-width: 2px; }

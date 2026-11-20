@@ -1,0 +1,479 @@
+layout:
+  qmk_keyboard: aki27/cocot46plus
+  layout_name: LAYOUT
+layers:
+  DV (computer set to Dvorak):
+  - Tab
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - '['
+  - Ctrl
+  - t: A
+    h: $$mdi:ship-wheel$$
+  - t: S
+    h: $$mdi:apple-keyboard-option$$
+  - t: D
+    h: $$mdi:apple-keyboard-command$$
+  - t: F
+    h: $$mdi:apple-keyboard-shift$$
+  - G
+  - H
+  - t: J
+    h: $$mdi:apple-keyboard-shift$$
+  - t: K
+    h: $$mdi:apple-keyboard-command$$
+  - t: L
+    h: $$mdi:apple-keyboard-option$$
+  - t: ;
+    h: $$mdi:ship-wheel$$
+  - ''''
+  - Shift
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - Shift
+  - t: Alt
+    type: th-purple
+  - t: Cmd
+    type: th-pink
+  - t: Bksp
+    h: NAV
+    type: th-yellow
+  - t: Del word
+    h: NUM
+    type: th-green
+  - t: $$mdi:mouse-left-click$$
+    type: th-cyan
+  - t: $$mdi:mouse-right-click$$
+    type: th-cyan
+  - t: Enter
+    h: NUM
+    type: th-green
+  - t: Space
+    h: NAV
+    type: th-yellow
+  - t: Tab
+    type: th-pink
+  - t: Esc
+    s: '` ~'
+    type: th-purple
+  - ''
+  - $$mdi:mouse-scroll-wheel$$
+  - ''
+  - ''
+  - ''
+  - ''
+  QW (computer set to US):
+  - Tab
+  - ''''
+  - ','
+  - .
+  - P
+  - Y
+  - F
+  - G
+  - C
+  - R
+  - L
+  - /
+  - Ctrl
+  - t: A
+    h: $$mdi:ship-wheel$$
+  - t: O
+    h: $$mdi:apple-keyboard-option$$
+  - t: E
+    h: $$mdi:apple-keyboard-command$$
+  - t: U
+    h: $$mdi:apple-keyboard-shift$$
+  - I
+  - D
+  - t: H
+    h: $$mdi:apple-keyboard-shift$$
+  - t: T
+    h: $$mdi:apple-keyboard-command$$
+  - t: N
+    h: $$mdi:apple-keyboard-option$$
+  - t: S
+    h: $$mdi:ship-wheel$$
+  - '-'
+  - Shift
+  - ;
+  - Q
+  - J
+  - K
+  - X
+  - B
+  - M
+  - W
+  - V
+  - Z
+  - Shift
+  - t: Alt
+    type: th-purple
+  - t: Cmd
+    type: th-pink
+  - t: Bksp
+    h: NAV
+    type: th-yellow
+  - t: Del word
+    h: NUM
+    type: th-green
+  - t: $$mdi:mouse-left-click$$
+    type: th-cyan
+  - t: $$mdi:mouse-right-click$$
+    type: th-cyan
+  - t: Enter
+    h: NUM
+    type: th-green
+  - t: Space
+    h: NAV
+    type: th-yellow
+  - t: Tab
+    type: th-pink
+  - t: Esc
+    s: '` ~'
+    type: th-purple
+  - ''
+  - $$mdi:mouse-scroll-wheel$$
+  - ''
+  - ''
+  - ''
+  - ''
+  NAV:
+  - t: ▽
+    type: trans
+  - ''
+  - Del
+  - Esc
+  - Enter
+  - ''
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - ''
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - $$mdi:ship-wheel$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
+  - ''
+  - PgDn
+  - ←
+  - ↓
+  - →
+  - ''
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - Undo
+  - Cut
+  - Copy
+  - Paste
+  - Redo
+  - Del line
+  - Bksp
+  - Del word
+  - Del
+  - ''
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans th-purple
+  - t: ▽
+    type: trans th-pink
+  - t: Del
+    type: held th-yellow
+  - t: Del line
+    type: th-green
+  - t: ▽
+    type: trans th-cyan
+  - t: ▽
+    type: trans th-cyan
+  - t: ▽
+    type: trans th-green
+  - t: ▽
+    type: trans th-yellow
+  - t: ▽
+    type: trans th-pink
+  - t: ▽
+    type: trans th-purple
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  NUM:
+  - '`'
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - t: '*'
+    s: /
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - t: ▽
+    type: trans
+  - ''
+  - t: /
+    h: $$mdi:ship-wheel$$
+  - t: \
+    h: $$mdi:apple-keyboard-option$$
+  - t: (
+    h: $$mdi:apple-keyboard-command$$
+  - t: )
+    h: $$mdi:apple-keyboard-shift$$
+  - '='
+  - t: +
+    s: '-'
+  - t: '4'
+    h: $$mdi:apple-keyboard-shift$$
+  - t: '5'
+    h: $$mdi:apple-keyboard-command$$
+  - t: '6'
+    h: $$mdi:apple-keyboard-option$$
+  - t: '0'
+    h: $$mdi:ship-wheel$$
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - ^
+  - '&'
+  - '['
+  - ']'
+  - '|'
+  - t: '%'
+    s: ^
+  - '1'
+  - '2'
+  - '3'
+  - t: .
+    s: ','
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans th-purple
+  - t: ▽
+    type: trans th-pink
+  - t: ▽
+    type: trans th-yellow
+  - type: held th-green
+  - t: FUN
+    type: th-cyan
+  - t: FUN
+    type: th-cyan
+  - t: ▽
+    type: trans th-green
+  - t: ▽
+    type: trans th-yellow
+  - t: ▽
+    type: trans th-pink
+  - t: ▽
+    type: trans th-purple
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  FUN:
+  - Boot
+  - ''
+  - Mute
+  - Vol-
+  - Vol+
+  - Play
+  - CPI
+  - F7
+  - F8
+  - F9
+  - F10
+  - Rot -15
+  - ''
+  - DV
+  - QW
+  - Mac
+  - Win
+  - ''
+  - Scrl speed
+  - F4
+  - F5
+  - F6
+  - F11
+  - Rot +15
+  - ''
+  - LEDs on/off
+  - Colour
+  - RGB -
+  - RGB +
+  - ''
+  - Scrl invert
+  - F1
+  - F2
+  - F3
+  - F12
+  - Scrl lock
+  - t: ▽
+    type: trans th-purple
+  - t: ▽
+    type: trans th-pink
+  - t: ▽
+    type: trans th-yellow
+  - type: held th-green
+  - type: held th-cyan
+  - t: ▽
+    type: trans th-cyan
+  - t: ▽
+    type: trans th-green
+  - t: ▽
+    type: trans th-yellow
+  - t: ▽
+    type: trans th-pink
+  - t: ▽
+    type: trans th-purple
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  MOUSE:
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - $$mdi:mouse-move-vertical$$
+  - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:mouse-right-click$$
+  - $$mdi:mouse-left-click$$
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - $$mdi:mouse-left-click$$
+  - $$mdi:mouse-right-click$$
+  - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:mouse-move-vertical$$
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans th-purple
+  - t: ▽
+    type: trans th-pink
+  - t: ▽
+    type: trans th-yellow
+  - t: ▽
+    type: trans th-green
+  - t: ▽
+    type: trans th-cyan
+  - t: ▽
+    type: trans th-cyan
+  - t: ▽
+    type: trans th-green
+  - t: ▽
+    type: trans th-yellow
+  - t: ▽
+    type: trans th-pink
+  - t: ▽
+    type: trans th-purple
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans

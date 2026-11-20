@@ -1,0 +1,504 @@
+<svg width="1292" height="687" viewBox="0 0 1292 687" class="keymap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>/* start glyphs */
+<svg id="mdi:apple-keyboard-command">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-apple-keyboard-command" viewBox="0 0 24 24"><path d="M6,2A4,4 0 0,1 10,6V8H14V6A4,4 0 0,1 18,2A4,4 0 0,1 22,6A4,4 0 0,1 18,10H16V14H18A4,4 0 0,1 22,18A4,4 0 0,1 18,22A4,4 0 0,1 14,18V16H10V18A4,4 0 0,1 6,22A4,4 0 0,1 2,18A4,4 0 0,1 6,14H8V10H6A4,4 0 0,1 2,6A4,4 0 0,1 6,2M16,18A2,2 0 0,0 18,20A2,2 0 0,0 20,18A2,2 0 0,0 18,16H16V18M14,10H10V14H14V10M6,16A2,2 0 0,0 4,18A2,2 0 0,0 6,20A2,2 0 0,0 8,18V16H6M8,6A2,2 0 0,0 6,4A2,2 0 0,0 4,6A2,2 0 0,0 6,8H8V6M18,8A2,2 0 0,0 20,6A2,2 0 0,0 18,4A2,2 0 0,0 16,6V8H18Z" /></svg>
+</svg>
+<svg id="mdi:apple-keyboard-option">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-apple-keyboard-option" viewBox="0 0 24 24"><path d="M3,4H9.11L16.15,18H21V20H14.88L7.84,6H3V4M14,4H21V6H14V4Z" /></svg>
+</svg>
+<svg id="mdi:apple-keyboard-shift">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-apple-keyboard-shift" viewBox="0 0 24 24"><path d="M15,18V12H17.17L12,6.83L6.83,12H9V18H15M12,4L22,14H17V20H7V14H2L12,4Z" /></svg>
+</svg>
+<svg id="mdi:mouse-left-click">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-mouse-left-click" viewBox="0 0 24 24"><path d="M13 9V1.07C16.94 1.56 20 4.92 20 9H13M6.34 20.66C4.84 19.16 4 17.12 4 15V11H20V15C20 17.12 19.16 19.16 17.66 20.66C16.16 22.16 14.12 23 12 23C9.88 23 7.84 22.16 6.34 20.66M11 9V1.07C10.3 1.16 9.63 1.33 9 1.59C6.67 2.53 4.89 4.53 4.25 7C4.09 7.64 4 8.31 4 9H11M6.34 7C6.82 5.65 7.78 4.5 9 3.81V7H6.34Z" /></svg>
+</svg>
+<svg id="mdi:mouse-move-vertical">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-mouse-move-vertical" viewBox="0 0 24 24"><path d="M20 6H23L19 2L15 6H18V18H15L19 22L23 18H20V6M9 3.09C11.83 3.57 14 6.04 14 9H9V3.09M14 11V15C14 18.3 11.3 21 8 21S2 18.3 2 15V11H14M7 9H2C2 6.04 4.17 3.57 7 3.09V9Z" /></svg>
+</svg>
+<svg id="mdi:mouse-right-click">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-mouse-right-click" viewBox="0 0 24 24"><path d="M13 9V1.07C13.7 1.16 14.37 1.33 15 1.59C17.33 2.53 19.11 4.53 19.75 7C19.91 7.64 20 8.31 20 9H13M17.66 7C17.18 5.65 16.23 4.5 15 3.81V7H17.66M11 9V1.07C7.06 1.56 4 4.92 4 9H11M6.34 20.66C4.84 19.16 4 17.12 4 15V11H20V15C20 17.12 19.16 19.16 17.66 20.66C16.16 22.16 14.12 23 12 23C9.88 23 7.84 22.16 6.34 20.66Z" /></svg>
+</svg>
+<svg id="mdi:mouse-scroll-wheel">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-mouse-scroll-wheel" viewBox="0 0 24 24"><path d="M11 1.07C7.05 1.56 4 4.92 4 9H11V7.73C10.4 7.39 10 6.74 10 6V4C10 3.26 10.4 2.61 11 2.27V1.07M13 9V7.73C13.6 7.39 14 6.74 14 6V4C14 3.26 13.6 2.61 13 2.27V1.07C16.94 1.56 20 4.92 20 9H13M4 15C4 17.12 4.84 19.16 6.34 20.66C7.84 22.16 9.88 23 12 23C14.12 23 16.16 22.16 17.66 20.66C19.16 19.16 20 17.12 20 15V11H4V15M13 6V4C13 3.45 12.55 3 12 3C11.45 3 11 3.45 11 4V6C11 6.55 11.45 7 12 7C12.55 7 13 6.55 13 6Z" /></svg>
+</svg>
+<svg id="mdi:ship-wheel">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-ship-wheel" viewBox="0 0 24 24"><path d="M2,11L4.05,11.1C4.3,8.83 5.5,6.85 7.25,5.56L6.13,3.84C5.86,3.36 6,2.75 6.5,2.47C7,2.2 7.59,2.36 7.87,2.84L8.8,4.66C9.78,4.24 10.86,4 12,4C13.14,4 14.22,4.24 15.2,4.66L16.13,2.84C16.41,2.36 17,2.2 17.5,2.47C18,2.75 18.14,3.36 17.87,3.84L16.75,5.56C18.5,6.85 19.7,8.83 19.95,11.1L22,11A1,1 0 0,1 23,12A1,1 0 0,1 22,13L19.95,12.9C19.7,15.17 18.5,17.15 16.75,18.44L17.87,20.16C18.14,20.64 18,21.25 17.5,21.53C17,21.8 16.41,21.64 16.13,21.16L15.2,19.34C14.22,19.76 13.14,20 12,20C10.86,20 9.78,19.76 8.8,19.34L7.87,21.16C7.59,21.64 7,21.8 6.5,21.53C6,21.25 5.86,20.64 6.13,20.16L7.25,18.44C5.5,17.15 4.3,15.17 4.05,12.9L2,13A1,1 0 0,1 1,12A1,1 0 0,1 2,11M9.07,11.35C9.2,10.74 9.53,10.2 10,9.79L8.34,7.25C7.11,8.19 6.27,9.6 6.05,11.2L9.07,11.35M12,9C12.32,9 12.62,9.05 12.9,9.14L14.28,6.45C13.58,6.16 12.81,6 12,6C11.19,6 10.42,6.16 9.72,6.45L11.1,9.14C11.38,9.05 11.68,9 12,9M14.93,11.35L17.95,11.2C17.73,9.6 16.89,8.19 15.66,7.25L14,9.79C14.47,10.2 14.8,10.74 14.93,11.35M14.93,12.65C14.8,13.26 14.47,13.8 14,14.21L15.66,16.75C16.89,15.81 17.73,14.4 17.95,12.8L14.93,12.65M12,15C11.68,15 11.38,14.95 11.09,14.86L9.72,17.55C10.42,17.84 11.19,18 12,18C12.81,18 13.58,17.84 14.28,17.55L12.91,14.86C12.62,14.95 12.32,15 12,15M9.07,12.65L6.05,12.8C6.27,14.4 7.11,15.81 8.34,16.75L10,14.21C9.53,13.8 9.2,13.26 9.07,12.65Z" /></svg>
+</svg>
+</defs>/* end glyphs */
+<style>/* inherit to force styles through use tags */
+svg path {
+    fill: inherit;
+}
+
+/* font and background color specifications */
+svg.keymap {
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-size: 14px;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    fill: #24292e;
+}
+
+/* default key styling */
+rect.key {
+    fill: #f6f8fa;
+}
+
+rect.key, rect.combo {
+    stroke: #c9cccf;
+    stroke-width: 1;
+}
+
+/* default key side styling, only used is draw_key_sides is set */
+rect.side {
+    filter: brightness(90%);
+}
+
+/* color accent for combo boxes */
+rect.combo, rect.combo-separate {
+    fill: #cdf;
+}
+
+/* color accent for held keys */
+rect.held, rect.combo.held {
+    fill: #fdd;
+}
+
+/* color accent for ghost (optional) keys */
+rect.ghost, rect.combo.ghost {
+    stroke-dasharray: 4, 4;
+    stroke-width: 2;
+}
+
+text {
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+/* styling for layer labels */
+text.label {
+    font-weight: bold;
+    text-anchor: start;
+    stroke: white;
+    stroke-width: 4;
+    paint-order: stroke;
+}
+
+/* styling for optional footer */
+text.footer {
+    text-anchor: end;
+    dominant-baseline: auto;
+    stroke: white;
+    stroke-width: 4;
+    paint-order: stroke;
+}
+
+/* styling for combo tap, and key non-tap label text */
+text.combo, text.hold, text.shifted, text.left, text.right, text.tl, text.tr, text.bl, text.br {
+    font-size: 11px;
+}
+
+text.hold, text.bl, text.br {
+    text-anchor: middle;
+    dominant-baseline: auto;
+}
+
+text.shifted, text.tl, text.tr {
+    text-anchor: middle;
+    dominant-baseline: hanging;
+}
+
+text.left, text.tl, text.bl {
+    text-anchor: start;
+}
+
+text.right, text.tr, text.br {
+    text-anchor: end;
+}
+
+text.layer-activator {
+    text-decoration: underline;
+}
+
+/* styling for hold/shifted label text in combo box */
+text.combo.hold, text.combo.shifted, text.combo.left, text.combo.right {
+    font-size: 8px;
+}
+
+/* lighter symbol for transparent keys */
+text.trans {
+    fill: #7b7e81;
+}
+
+/* styling for combo dendrons */
+path.combo {
+    stroke-width: 1;
+    stroke: gray;
+    fill: none;
+}
+
+/* Start Tabler Icons Cleanup */
+/* cannot use height/width with glyphs */
+.icon-tabler > path {
+    fill: inherit;
+    stroke: inherit;
+    stroke-width: 2;
+}
+/* hide tabler's default box */
+.icon-tabler > path[stroke="none"][fill="none"] {
+    visibility: hidden;
+}
+/* End Tabler Icons Cleanup */
+
+text.tap { font-size: 18px; font-weight: bold; fill: #222; }
+text.bl { font-size: 12px; fill: #888; }
+text.tr { font-size: 14px; fill: #d0312d; }
+text.tl { font-size: 11px; fill: #2e8b2e; }
+text.br { font-size: 13px; fill: #2b4bd6; }
+use.br { fill: #2b4bd6; color: #2b4bd6; }
+use.left { fill: #0a9396; color: #0a9396; }
+text.right { font-size: 11px; fill: #e8837f; }
+rect.combo { fill: #eef6ee; stroke: #2e8b2e; }
+text.combo { font-size: 11px; fill: #2e8b2e; }
+rect.th-green { fill: #d4f0d4; }
+rect.th-yellow { fill: #fff1a8; }
+rect.th-purple { fill: #e2d4f7; }
+rect.th-pink { fill: #fbd3e6; }
+rect.th-cyan { fill: #c9f0f3; }
+rect.held { stroke: #444; stroke-width: 2px; }
+text.left { font-size: 10px; font-weight: bold; fill: #0a9396; }
+text.hold { font-size: 10px; fill: #7a4fb5; }
+</style>
+<g transform="translate(30, 0)" class="layer-Dvorak: what you type, in DV and QW mode">
+<text x="0" y="28" class="label" id="Dvorak:-what-you-type-in-DV-and-QW-mode">Dvorak: what you type, in DV and QW mode:</text>
+<g transform="translate(0, 56)">
+<g transform="translate(80, 69) rotate(10.0)" class="key keypos-0">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">Tab</text>
+<text x="-38" y="-38" class="key tl">Boot</text>
+<text x="38" y="-38" class="key tr">`</text>
+</g>
+<g transform="translate(164, 83) rotate(10.0)" class="key keypos-1">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">&#x27;</text>
+<text x="38" y="-38" class="key tr">!</text>
+</g>
+<g transform="translate(257, 56) rotate(10.0)" class="key keypos-2">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">,</text>
+<text x="-38" y="-38" class="key tl">Mute</text>
+<text x="38" y="-38" class="key tr">@</text>
+<text x="38" y="38" class="key br">Del</text>
+</g>
+<g transform="translate(345, 50) rotate(10.0)" class="key keypos-3">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">.</text>
+<text x="-38" y="-38" class="key tl">Vol-</text>
+<text x="38" y="-38" class="key tr">#</text>
+<text x="38" y="38" class="key br">Esc</text>
+</g>
+<g transform="translate(428, 73) rotate(10.0)" class="key keypos-4">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">P</text>
+<text x="-38" y="-38" class="key tl">Vol+</text>
+<text x="38" y="-38" class="key tr">$</text>
+<text x="38" y="38" class="key br">Enter</text>
+</g>
+<g transform="translate(511, 97) rotate(10.0)" class="key keypos-5">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">Y</text>
+<text x="-38" y="-38" class="key tl">Play</text>
+<text x="38" y="-38" class="key tr">%</text>
+</g>
+<g transform="translate(720, 97) rotate(-10.0)" class="key keypos-6">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">F</text>
+<text x="38" y="0" class="key right">/</text>
+<text x="-38" y="-38" class="key tl">CPI</text>
+<text x="38" y="-38" class="key tr">*</text>
+<text x="38" y="38" class="key br">PgUp</text>
+</g>
+<g transform="translate(803, 73) rotate(-10.0)" class="key keypos-7">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">G</text>
+<text x="-38" y="-38" class="key tl">F7</text>
+<text x="38" y="-38" class="key tr">7</text>
+<text x="38" y="38" class="key br">Home</text>
+</g>
+<g transform="translate(887, 50) rotate(-10.0)" class="key keypos-8">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">C</text>
+<text x="-38" y="-38" class="key tl">F8</text>
+<text x="38" y="-38" class="key tr">8</text>
+<text x="38" y="38" class="key br">↑</text>
+</g>
+<g transform="translate(975, 56) rotate(-10.0)" class="key keypos-9">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">R</text>
+<text x="-38" y="-38" class="key tl">F9</text>
+<text x="38" y="-38" class="key tr">9</text>
+<text x="38" y="38" class="key br">End</text>
+</g>
+<g transform="translate(1067, 83) rotate(-10.0)" class="key keypos-10">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">L</text>
+<text x="-38" y="-38" class="key tl">F10</text>
+<text x="38" y="-38" class="key tr">0</text>
+</g>
+<g transform="translate(1152, 69) rotate(-10.0)" class="key keypos-11">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">/</text>
+<text x="-38" y="-38" class="key tl">Rot -15</text>
+</g>
+<g transform="translate(65, 153) rotate(10.0)" class="key keypos-12">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">Ctrl</text>
+</g>
+<g transform="translate(149, 168) rotate(10.0)" class="key keypos-13">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">A</text>
+<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-move-vertical"/>
+<text x="-38" y="-38" class="key tl">DV</text>
+<text x="38" y="-38" class="key tr">/</text>
+<use href="#mdi:ship-wheel" xlink:href="#mdi:ship-wheel" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:ship-wheel"/>
+</g>
+<g transform="translate(242, 141) rotate(10.0)" class="key keypos-14">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">O</text>
+<use href="#mdi:mouse-scroll-wheel" xlink:href="#mdi:mouse-scroll-wheel" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-scroll-wheel"/>
+<text x="-38" y="-38" class="key tl">QW</text>
+<text x="38" y="-38" class="key tr">\</text>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:apple-keyboard-option"/>
+</g>
+<g transform="translate(330, 135) rotate(10.0)" class="key keypos-15">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">E</text>
+<use href="#mdi:mouse-right-click" xlink:href="#mdi:mouse-right-click" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-right-click"/>
+<text x="-38" y="-38" class="key tl">Mac</text>
+<text x="38" y="-38" class="key tr">(</text>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:apple-keyboard-command"/>
+</g>
+<g transform="translate(413, 158) rotate(10.0)" class="key keypos-16">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">U</text>
+<use href="#mdi:mouse-left-click" xlink:href="#mdi:mouse-left-click" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-left-click"/>
+<text x="-38" y="-38" class="key tl">Win</text>
+<text x="38" y="-38" class="key tr">)</text>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:apple-keyboard-shift"/>
+</g>
+<g transform="translate(496, 181) rotate(10.0)" class="key keypos-17">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">I</text>
+<text x="38" y="-38" class="key tr">=</text>
+</g>
+<g transform="translate(735, 181) rotate(-10.0)" class="key keypos-18">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">D</text>
+<text x="38" y="0" class="key right">-</text>
+<text x="-38" y="-38" class="key tl"><tspan style="font-size: 70%">Scrl speed</tspan></text>
+<text x="38" y="-38" class="key tr">+</text>
+<text x="38" y="38" class="key br">PgDn</text>
+</g>
+<g transform="translate(818, 158) rotate(-10.0)" class="key keypos-19">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">H</text>
+<use href="#mdi:mouse-left-click" xlink:href="#mdi:mouse-left-click" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-left-click"/>
+<text x="-38" y="-38" class="key tl">F4</text>
+<text x="38" y="-38" class="key tr">4</text>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:apple-keyboard-shift"/>
+<text x="38" y="38" class="key br">←</text>
+</g>
+<g transform="translate(902, 135) rotate(-10.0)" class="key keypos-20">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">T</text>
+<use href="#mdi:mouse-right-click" xlink:href="#mdi:mouse-right-click" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-right-click"/>
+<text x="-38" y="-38" class="key tl">F5</text>
+<text x="38" y="-38" class="key tr">5</text>
+<use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:apple-keyboard-command"/>
+<text x="38" y="38" class="key br">↓</text>
+</g>
+<g transform="translate(990, 141) rotate(-10.0)" class="key keypos-21">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">N</text>
+<use href="#mdi:mouse-scroll-wheel" xlink:href="#mdi:mouse-scroll-wheel" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-scroll-wheel"/>
+<text x="-38" y="-38" class="key tl">F6</text>
+<text x="38" y="-38" class="key tr">6</text>
+<use href="#mdi:apple-keyboard-option" xlink:href="#mdi:apple-keyboard-option" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:apple-keyboard-option"/>
+<text x="38" y="38" class="key br">→</text>
+</g>
+<g transform="translate(1082, 168) rotate(-10.0)" class="key keypos-22">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">S</text>
+<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-move-vertical"/>
+<text x="-38" y="-38" class="key tl">F11</text>
+<text x="38" y="-38" class="key tr">0</text>
+<use href="#mdi:ship-wheel" xlink:href="#mdi:ship-wheel" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:ship-wheel"/>
+</g>
+<g transform="translate(1167, 153) rotate(-10.0)" class="key keypos-23">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">-</text>
+<text x="-38" y="-38" class="key tl">Rot +15</text>
+</g>
+<g transform="translate(50, 238) rotate(10.0)" class="key keypos-24">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">Shift</text>
+<text x="0" y="38" class="key hold"><tspan style="font-size: 70%">both: CAPS</tspan></text>
+</g>
+<g transform="translate(135, 253) rotate(10.0)" class="key keypos-25">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">;</text>
+<text x="-38" y="-38" class="key tl"><tspan style="font-size: 64%">LEDs on/off</tspan></text>
+<text x="38" y="-38" class="key tr">^</text>
+<text x="38" y="38" class="key br">Undo</text>
+</g>
+<g transform="translate(227, 225) rotate(10.0)" class="key keypos-26">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">Q</text>
+<text x="-38" y="-38" class="key tl">Colour</text>
+<text x="38" y="-38" class="key tr">&amp;</text>
+<text x="38" y="38" class="key br">Cut</text>
+</g>
+<g transform="translate(315, 219) rotate(10.0)" class="key keypos-27">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">J</text>
+<text x="-38" y="-38" class="key tl">RGB -</text>
+<text x="38" y="-38" class="key tr">[</text>
+<text x="38" y="38" class="key br">Copy</text>
+</g>
+<g transform="translate(398, 243) rotate(10.0)" class="key keypos-28">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">K</text>
+<text x="-38" y="-38" class="key tl">RGB +</text>
+<text x="38" y="-38" class="key tr">]</text>
+<text x="38" y="38" class="key br">Paste</text>
+</g>
+<g transform="translate(481, 266) rotate(10.0)" class="key keypos-29">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">X</text>
+<text x="38" y="-38" class="key tr">|</text>
+<text x="38" y="38" class="key br">Redo</text>
+</g>
+<g transform="translate(750, 266) rotate(-10.0)" class="key keypos-30">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">B</text>
+<text x="38" y="0" class="key right">^</text>
+<text x="-38" y="-38" class="key tl"><tspan style="font-size: 64%">Scrl invert</tspan></text>
+<text x="38" y="-38" class="key tr">%</text>
+<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del line</tspan></text>
+</g>
+<g transform="translate(833, 243) rotate(-10.0)" class="key keypos-31">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">M</text>
+<text x="-38" y="-38" class="key tl">F1</text>
+<text x="38" y="-38" class="key tr">1</text>
+<text x="38" y="38" class="key br">Bksp</text>
+</g>
+<g transform="translate(916, 219) rotate(-10.0)" class="key keypos-32">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">W</text>
+<text x="-38" y="-38" class="key tl">F2</text>
+<text x="38" y="-38" class="key tr">2</text>
+<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del word</tspan></text>
+</g>
+<g transform="translate(1005, 225) rotate(-10.0)" class="key keypos-33">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">V</text>
+<text x="-38" y="-38" class="key tl">F3</text>
+<text x="38" y="-38" class="key tr">3</text>
+<text x="38" y="38" class="key br">Del</text>
+</g>
+<g transform="translate(1097, 253) rotate(-10.0)" class="key keypos-34">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">Z</text>
+<text x="38" y="0" class="key right">,</text>
+<text x="-38" y="-38" class="key tl">F12</text>
+<text x="38" y="-38" class="key tr">.</text>
+</g>
+<g transform="translate(1182, 238) rotate(-10.0)" class="key keypos-35">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">Shift</text>
+<text x="0" y="38" class="key hold"><tspan style="font-size: 70%">both: CAPS</tspan></text>
+<text x="-38" y="-38" class="key tl"><tspan style="font-size: 78%">Scrl lock</tspan></text>
+</g>
+<g transform="translate(254, 318) rotate(10.0)" class="key th-purple keypos-36">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-purple"/>
+<text x="0" y="0" class="key th-purple tap">Alt</text>
+</g>
+<g transform="translate(339, 333) rotate(10.0)" class="key th-pink keypos-37">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-pink"/>
+<text x="0" y="0" class="key th-pink tap">Cmd</text>
+</g>
+<g transform="translate(449, 361) rotate(20.0)" class="key th-yellow keypos-38">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-yellow"/>
+<text x="0" y="0" class="key th-yellow tap">Bksp</text>
+<text x="-38" y="38" class="key th-yellow bl">NAV</text>
+<text x="38" y="38" class="key th-yellow br">Del</text>
+</g>
+<g transform="translate(556, 406) rotate(30.0)" class="key th-green keypos-39">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-green"/>
+<text x="0" y="0" class="key th-green tap">
+<tspan x="0" dy="-0.6em">Del</tspan><tspan x="0" dy="1.2em">word</tspan>
+</text>
+<text x="-38" y="38" class="key th-green bl">NUM</text>
+<text x="38" y="38" class="key th-green br"><tspan x="38" dy="-1em" style="font-size: 11px">Del</tspan><tspan x="38" dy="1em" style="font-size: 11px">line</tspan></text>
+</g>
+<g transform="translate(561, 297) rotate(20.0)" class="key th-cyan keypos-40">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-cyan"/>
+<use href="#mdi:mouse-left-click" xlink:href="#mdi:mouse-left-click" x="-13" y="-13" height="26" width="26.0" class="key th-cyan tap glyph mdi:mouse-left-click"/>
+</g>
+<g transform="translate(670, 297) rotate(-20.0)" class="key th-cyan keypos-41">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-cyan"/>
+<use href="#mdi:mouse-right-click" xlink:href="#mdi:mouse-right-click" x="-13" y="-13" height="26" width="26.0" class="key th-cyan tap glyph mdi:mouse-right-click"/>
+</g>
+<g transform="translate(676, 406) rotate(-30.0)" class="key th-green keypos-42">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-green"/>
+<text x="0" y="0" class="key th-green tap">Enter</text>
+<text x="-38" y="38" class="key th-green bl">NUM</text>
+</g>
+<g transform="translate(782, 361) rotate(-20.0)" class="key th-yellow keypos-43">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-yellow"/>
+<text x="0" y="0" class="key th-yellow tap">Space</text>
+<text x="-38" y="38" class="key th-yellow bl">NAV</text>
+</g>
+<g transform="translate(893, 333) rotate(-10.0)" class="key th-pink keypos-44">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-pink"/>
+<text x="0" y="0" class="key th-pink tap">Tab</text>
+</g>
+<g transform="translate(977, 318) rotate(-10.0)" class="key th-purple keypos-45">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-purple"/>
+<text x="0" y="0" class="key th-purple tap">Esc</text>
+<text x="0" y="38" class="key th-purple hold">⌘` ⇧~</text>
+</g>
+<g transform="translate(530, 508)" class="key keypos-46">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">↺</tspan><tspan x="0" dy="1.2em">↑</tspan>
+</text>
+<text x="-38" y="-38" class="key tl">Vol−</text>
+<text x="38" y="38" class="key br">PgUp</text>
+</g>
+<g transform="translate(616, 508)" class="key keypos-47">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<use href="#mdi:mouse-scroll-wheel" xlink:href="#mdi:mouse-scroll-wheel" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse-scroll-wheel"/>
+<text x="-38" y="38" class="key bl">knob</text>
+</g>
+<g transform="translate(702, 508)" class="key keypos-48">
+<rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">↻</tspan><tspan x="0" dy="1.2em">↓</tspan>
+</text>
+<text x="-38" y="-38" class="key tl">Vol+</text>
+<text x="38" y="38" class="key br">PgDn</text>
+</g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="545" y="338" width="28" height="26" class="combo"/>
+<text x="559" y="351" class="combo tap">FUN</text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="659" y="338" width="28" height="26" class="combo"/>
+<text x="673" y="351" class="combo tap">FUN</text>
+</g>
+</g>
+</g>
+<text x="30" y="667" class="colour-key" style="text-anchor: start" font-size="11"><tspan fill="#222">black: type</tspan> · <tspan fill="#888">grey: hold</tspan> · <tspan fill="#d0312d">red: NUM (hold green)</tspan> · <tspan fill="#2b4bd6">blue: NAV (hold yellow)</tspan> · <tspan fill="#2e8b2e">green: FUN (green + cyan)</tspan> · <tspan fill="#0a9396">cyan: MOUSE (ball)</tspan> · <tspan fill="#7a4fb5">purple: with ⌘/⇧</tspan></text>
+</svg>

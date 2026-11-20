@@ -1,0 +1,40 @@
+draw_config:
+  glyph_tap_size: 26
+  glyph_hold_size: 18
+  glyph_shifted_size: 18
+  key_w: 104
+  key_h: 86
+  inner_pad_w: 3
+  inner_pad_h: 3
+  svg_extra_style: |
+    text.tap { font-size: 18px; font-weight: bold; fill: #222; }
+    .layer-NAV .tap, .layer-NAV .tr, .layer-NAV .bl { opacity: 0.3; }
+    .layer-NAV text.br { font-size: 15px; font-weight: bold; }
+    .layer-NAV .navmod.bl { opacity: 1; }
+    .layer-NUM .tap, .layer-NUM .bl { opacity: 0.3; }
+    .layer-NUM text.tr { font-size: 17px; font-weight: bold; }
+    .layer-NUM text.br { fill: #d0312d; font-size: 14px; }
+    svg.shift .layer-NUM text.tr { font-size: 14px; font-weight: normal; }
+    svg.shift .layer-NUM text.br { font-size: 17px; font-weight: bold; }
+    .layer-FUN .tap, .layer-FUN .tr, .layer-FUN .br, .layer-FUN .bl { opacity: 0.3; }
+    .layer-FUN text.tl { font-size: 13px; font-weight: bold; }
+    .layer-MOUSE .tap, .layer-MOUSE .tr, .layer-MOUSE .br, .layer-MOUSE .bl { opacity: 0.3; }
+    .layer-MOUSE .left { fill: #0a9396; }
+    text.label { display: none; }
+    text.bl { font-size: 12px; fill: #888; }
+    text.tr { font-size: 14px; fill: #d0312d; }
+    text.tl { font-size: 11px; fill: #2e8b2e; }
+    text.br { font-size: 13px; fill: #2b4bd6; }
+    use.br { fill: #2b4bd6; color: #2b4bd6; }
+    use.left { fill: #0a9396; color: #0a9396; }
+    rect.combo { fill: #eef6ee; stroke: #2e8b2e; }
+    text.combo { font-size: 11px; fill: #2e8b2e; }
+    rect.th-green { fill: #d4f0d4; }
+    rect.th-yellow { fill: #fff1a8; }
+    rect.th-purple { fill: #e2d4f7; }
+    rect.th-pink { fill: #fbd3e6; }
+    rect.th-cyan { fill: #c9f0f3; }
+    rect.held { stroke: #444; stroke-width: 2px; }
+    text.shifted.mse { font-size: 10px; font-weight: bold; fill: #0a9396; }
+    text.shifted.knob { font-size: 10px; fill: #222; }
+    text.hold { font-size: 10px; fill: #7a4fb5; }

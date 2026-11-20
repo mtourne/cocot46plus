@@ -1,0 +1,27 @@
+draw_config:
+  glyph_tap_size: 26
+  glyph_hold_size: 18
+  glyph_shifted_size: 18
+  key_w: 104
+  key_h: 86
+  inner_pad_w: 3
+  inner_pad_h: 3
+  svg_extra_style: |
+    text.tap { font-size: 18px; font-weight: bold; fill: #222; }
+    text.bl { font-size: 12px; fill: #888; }
+    text.tr { font-size: 14px; fill: #d0312d; }
+    text.tl { font-size: 11px; fill: #2e8b2e; }
+    text.br { font-size: 13px; fill: #2b4bd6; }
+    use.br { fill: #2b4bd6; color: #2b4bd6; }
+    use.left { fill: #0a9396; color: #0a9396; }
+    text.right { font-size: 11px; fill: #e8837f; }
+    rect.combo { fill: #eef6ee; stroke: #2e8b2e; }
+    text.combo { font-size: 11px; fill: #2e8b2e; }
+    rect.th-green { fill: #d4f0d4; }
+    rect.th-yellow { fill: #fff1a8; }
+    rect.th-purple { fill: #e2d4f7; }
+    rect.th-pink { fill: #fbd3e6; }
+    rect.th-cyan { fill: #c9f0f3; }
+    rect.held { stroke: #444; stroke-width: 2px; }
+    text.left { font-size: 10px; font-weight: bold; fill: #0a9396; }
+    text.hold { font-size: 10px; fill: #7a4fb5; }

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cocot46plus: a Dvorak layout with a trackball</title>
+<meta name="description" content="QMK firmware for the cocot46plus split keyboard: Dvorak on any computer, home-row mods, thumb layers and a live view of every key press.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  /* The page borrows the board's own colour code: keycap grey, and each
+     layer's thumb-key colour with its legend colour on top. */
+  :root {
+    --page: #e8ebf0;
+    --cap: #f7f8fa;
+    --ink: #1c2433;
+    --muted: #5b6475;
+    --rule: #c9ced8;
+    --nav: #fff1a8;  --nav-ink: #2b4bd6;
+    --num: #d4f0d4;  --num-ink: #d0312d;
+    --fun: #d4f0d4;  --fun-ink: #2e8b2e;
+    --mouse: #c9f0f3; --mouse-ink: #0a7c7f;
+    --mods: #e2d4f7;
+    --font: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--page); color: var(--ink); font: 400 18px/1.55 var(--font); }
+  body { margin: 0; }
+  a { color: inherit; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  a:hover { color: var(--nav-ink); }
+  :focus-visible { outline: 3px solid var(--nav-ink); outline-offset: 3px; border-radius: 6px; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
+  header.top { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; font-size: 16px; }
+  header.top nav { display: flex; gap: 22px; }
+
+  /* Hero: the title, then the board itself. */
+  .hero h1 {
+    font-size: clamp(44px, 8.4vw, 112px); line-height: 0.92; letter-spacing: -0.035em;
+    font-weight: 800; margin: 28px 0 22px; max-width: 11ch;
+  }
+  .hero p.lede { font-size: clamp(19px, 2vw, 23px); line-height: 1.45; max-width: 36em; margin: 0 0 40px; color: #2c3546; }
+
+  .board {
+    background: var(--cap); border-radius: 28px; padding: 26px 26px 20px;
+    box-shadow: 0 1px 0 #fff inset, 0 24px 60px -30px rgba(28, 36, 51, 0.45);
+  }
+  .layers { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 18px; }
+  .layers .hint { color: var(--muted); font-size: 15px; margin-right: 6px; }
+  /* Layer buttons are drawn as the thumb keys that turn the layer on. */
+  .cap {
+    font: 600 16px/1 var(--font); color: var(--ink); cursor: pointer;
+    padding: 12px 18px 13px; border-radius: 11px; border: 1px solid rgba(28, 36, 51, 0.16);
+    background: var(--cap); box-shadow: 0 3px 0 rgba(28, 36, 51, 0.16);
+    transition: transform 80ms, box-shadow 80ms;
+  }
+  .cap small { font-weight: 400; color: var(--muted); margin-left: 6px; font-size: 13px; }
+  .cap[data-view="NAV"] { background: var(--nav); }
+  .cap[data-view="NUM"] { background: var(--num); }
+  .cap[data-view="FUN"] { background: linear-gradient(90deg, var(--fun) 50%, var(--mouse) 50%); }
+  .cap[data-view="MOUSE"] { background: var(--mouse); }
+  .cap[aria-pressed="true"] { transform: translateY(3px); box-shadow: 0 0 0 rgba(28, 36, 51, 0.16), 0 0 0 2px var(--ink); }
+  .board iframe { display: block; width: 100%; aspect-ratio: 1300 / 620; border: 0; }
+  .board .caption { min-height: 3.2em; margin: 10px 4px 0; color: #2c3546; max-width: 60em; }
+
+  /* Sections: plain text in one readable column, a keycap swatch for the
+     layer each one is about. */
+  section { padding: 84px 0 0; }
+  section h2 { font-size: clamp(30px, 3.6vw, 44px); line-height: 1.05; letter-spacing: -0.02em; font-weight: 800; margin: 0 0 18px; }
+  section p, section li { max-width: 38em; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 44px 56px; margin-top: 8px; }
+  .grid h3 { display: flex; align-items: center; gap: 12px; font-size: 22px; margin: 0 0 6px; }
+  .grid p { margin: 0; color: #2c3546; }
+  .swatch { width: 26px; height: 22px; border-radius: 6px; flex: none; border: 1px solid rgba(28, 36, 51, 0.18); box-shadow: 0 2px 0 rgba(28, 36, 51, 0.14); background: var(--cap); }
+
+  .thumbs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin: 26px 0 8px; max-width: 760px; }
+  .thumbs .hand { display: flex; gap: 6px; }
+  .thumbs .hand.right { justify-content: flex-start; }
+  .thumbs .k { flex: 1 1 0; min-width: 0; overflow-wrap: break-word; min-height: 62px; border-radius: 10px; border: 1px solid rgba(28, 36, 51, 0.16); box-shadow: 0 3px 0 rgba(28, 36, 51, 0.14); padding: 7px 8px; font-size: 14px; line-height: 1.15; font-weight: 600; }
+  .thumbs .k span { display: block; font-weight: 400; color: var(--muted); font-size: 12px; margin-top: 3px; }
+
+  code, kbd { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.86em; background: rgba(28, 36, 51, 0.07); padding: 1px 6px; border-radius: 5px; }
+  pre { background: var(--ink); color: #eef1f6; padding: 18px 22px; border-radius: 14px; overflow-x: auto; max-width: 42em; font-size: 15px; }
+  pre code { background: none; padding: 0; font-size: inherit; }
+  ol.steps { padding-left: 1.3em; }
+  ol.steps li { margin: 0 0 12px; padding-left: 6px; }
+
+  .downloads { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 22px; }
+  .downloads a { text-decoration: none; }
+  .downloads .cap { display: inline-block; }
+
+  footer { margin: 110px 0 0; padding: 30px 0 48px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 15px; }
+  footer p { max-width: 52em; margin: 0 0 8px; }
+
+  @media (max-width: 640px) {
+    html { font-size: 17px; }
+    .board { padding: 16px 12px 14px; border-radius: 18px; }
+    .thumbs { grid-template-columns: 1fr; }
+    header.top { flex-wrap: wrap; gap: 8px 16px; }
+    header.top nav { gap: 14px; flex-wrap: wrap; }
+    .thumbs .k { font-size: 12px; padding: 6px 5px; }
+    .thumbs .k span { font-size: 11px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .cap { transition: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <strong>cocot46plus</strong>
+    <nav>
+      <a href="live.html">Live view</a>
+      <a href="cheatsheet.pdf">Cheat sheet</a>
+      <a href="https://github.com/mtourne/cocot46plus">GitHub</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Dvorak, a trackball and ten thumb keys</h1>
+    <p class="lede">QMK firmware for aki27's cocot46plus, a 46-key split keyboard with a
+      trackball, a knob and an OLED. It types Dvorak on any computer, puts the
+      modifiers under your fingers and moves everything else to the thumbs.</p>
+
+    <div class="board">
+      <div class="layers" role="group" aria-label="Show a layer">
+        <span class="hint">Hold a thumb key:</span>
+        <button class="cap" data-view="BASE" aria-pressed="true">Base</button>
+        <button class="cap" data-view="NAV" aria-pressed="false">NAV<small>yellow</small></button>
+        <button class="cap" data-view="NUM" aria-pressed="false">NUM<small>green</small></button>
+        <button class="cap" data-view="FUN" aria-pressed="false">FUN<small>green + cyan</small></button>
+        <button class="cap" data-view="MOUSE" aria-pressed="false">MOUSE<small>move the ball</small></button>
+      </div>
+      <iframe src="live.html#BASE" title="The keyboard, showing the selected layer" loading="eager"></iframe>
+      <p class="caption" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <section id="ideas">
+    <h2>How it works</h2>
+    <div class="grid">
+      <div>
+        <h3><span class="swatch"></span>Dvorak on any computer</h3>
+        <p>Two modes, saved on the keyboard. In DV the computer is set to Dvorak and
+          the board sends ordinary keys. In QW the computer stays on US and the board
+          sends Dvorak letters itself. Shortcuts follow the Dvorak letters in both:
+          ⌘C is on the Dvorak C.</p>
+      </div>
+      <div>
+        <h3><span class="swatch" style="background: var(--mods)"></span>Modifiers on the home row</h3>
+        <p>Hold a home-row letter for Ctrl, Alt, Cmd or Shift, in that order from the
+          little finger. A key pressed within 200 ms of the previous letter always types
+          its letter, so fast typing never triggers a modifier. Shift's window is 80 ms,
+          so capitals still come easily.</p>
+      </div>
+      <div>
+        <h3><span class="swatch" style="background: var(--nav)"></span>NAV</h3>
+        <p>Arrows, Home and End, page keys and four delete keys on the right hand.
+          Undo, Cut, Copy, Paste and Redo on the left, with plain Ctrl, Alt, Cmd and
+          Shift under the fingers for selecting with the arrows. The ball scrolls.</p>
+      </div>
+      <div>
+        <h3><span class="swatch" style="background: var(--num)"></span>NUM</h3>
+        <p>A numpad on the right, symbols on the left, and one rule: Shift gives the
+          partner you'd expect. <code>*</code> and <code>/</code>, <code>+</code> and
+          <code>-</code>, <code>.</code> and <code>,</code>; <code>[</code> sits under
+          <code>(</code> and gives <code>{</code>.</p>
+      </div>
+      <div>
+        <h3><span class="swatch" style="background: linear-gradient(90deg, var(--fun) 50%, var(--mouse) 50%)"></span>FUN</h3>
+        <p>F1 to F12, volume and media keys, LED colour and brightness, trackball speed
+          and angle, and the switches for Mac or Windows and DV or QW. The OLED names
+          each setting as you change it.</p>
+      </div>
+      <div>
+        <h3><span class="swatch" style="background: var(--mouse)"></span>MOUSE</h3>
+        <p>Turns on by itself when the ball moves. Clicks sit on the home row of both
+          hands, and the little fingers hold to scroll.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="thumbs">
+    <h2>The thumbs, from the outside in</h2>
+    <p>The left thumb deletes and the right one types. Layer keys switch only after a
+      full hold, so a quick tap rolled into the next letter stays a tap.</p>
+    <div class="thumbs" aria-label="Thumb keys">
+      <div class="hand">
+        <div class="k" style="background: var(--mods)">Alt</div>
+        <div class="k" style="background: #fbd3e6">Cmd</div>
+        <div class="k" style="background: var(--nav)">Bksp<span>hold: NAV</span></div>
+        <div class="k" style="background: var(--num)">Del word<span>hold: NUM</span></div>
+        <div class="k" style="background: var(--mouse)">Click</div>
+      </div>
+      <div class="hand right">
+        <div class="k" style="background: var(--mouse)">Right click</div>
+        <div class="k" style="background: var(--num)">Enter<span>hold: NUM</span></div>
+        <div class="k" style="background: var(--nav)">Space<span>hold: NAV</span></div>
+        <div class="k" style="background: #fbd3e6">Tab</div>
+        <div class="k" style="background: var(--mods)">Esc<span>⌘: `</span></div>
+      </div>
+    </div>
+    <p>Left Cmd plus right Tab is ⌘Tab; in Windows mode it becomes Alt+Tab, and Ctrl
+      and Win swap places so Ctrl+C uses the same fingers as ⌘C.</p>
+  </section>
+
+  <section id="live">
+    <h2>Watch it live</h2>
+    <p>The keyboard can report each key press over a separate USB channel, and only
+      does while something is listening. Open the <a href="live.html">live view</a> in
+      Chrome and click <strong>Connect keyboard</strong>: keys light up as you hold
+      them and the board follows the active layer. On a Mac, Cocot Live shows the same
+      view in a small panel that floats over other windows, and shows the layer and
+      held modifiers in the menu bar.</p>
+    <div class="downloads">
+      <a href="live.html"><span class="cap" style="background: var(--mouse)">Open the live view</span></a>
+      <a href="cheatsheet.pdf"><span class="cap">Cheat sheet (PDF)</span></a>
+      <a href="keymap.pdf"><span class="cap">Every layer (PDF)</span></a>
+    </div>
+  </section>
+
+  <section id="build">
+    <h2>Build and flash</h2>
+    <ol class="steps">
+      <li>Install the <a href="https://docs.qmk.fm/newbs_getting_started">QMK CLI</a> and
+        <code>avrdude</code>.</li>
+      <li>Clone this repo and run <code>./build.sh flash</code>. The first run clones
+        QMK 0.31.12 next to it.</li>
+      <li>Start the bootloader: hold a green thumb key and the cyan key beside it, then
+        press Boot (top left), or press the reset button twice.</li>
+    </ol>
+    <pre><code>git clone https://github.com/mtourne/cocot46plus
+cd cocot46plus
+./build.sh flash</code></pre>
+    <p>Every push also builds the firmware on GitHub; the <code>.hex</code> is attached
+      to each run.</p>
+  </section>
+
+  <footer>
+    <p>The cocot46plus and its QMK board code are by
+      <a href="https://github.com/aki27kbd/cocot46plus">aki27</a>. This layout runs on
+      <a href="https://qmk.fm">QMK</a>, borrows dual-use keys from
+      <a href="https://github.com/dlip/qmk_firmware/tree/dlip/keyboards/tamatama/keymaps/engram">dlip's engram layout</a>
+      and symbol ideas from <a href="https://getreuer.info/posts/keyboards/symbol-layer/">Pascal Getreuer</a>,
+      and is drawn with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>.</p>
+    <p>GNU GPL, version 2 or later.</p>
+  </footer>
+</div>
+
+<script>
+  const CAPTIONS = {
+    BASE: "Dvorak letters, with Ctrl, Alt, Cmd and Shift under the home row when held. Both outer Shifts together turn on Caps Word.",
+    NAV: "Hold Bksp or Space. Arrows, Home/End and page keys on the right, delete keys below them, editing keys and plain modifiers on the left.",
+    NUM: "Hold Delete word or Enter. The small red characters are what Shift gives on this layer.",
+    FUN: "Hold a green key and the cyan key next to it. F-keys, media, LEDs, trackball settings and the mode switches.",
+    MOUSE: "Move the ball. Clicks on the home row, scrolling on the little fingers.",
+  };
+  const frame = document.querySelector(".board iframe");
+  const caption = document.querySelector(".board .caption");
+  const buttons = document.querySelectorAll(".layers .cap");
+  function show(view) {
+    buttons.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.view === view)));
+    frame.contentWindow.location.hash = view;
+    caption.textContent = CAPTIONS[view];
+  }
+  buttons.forEach((b) => b.addEventListener("click", () => show(b.dataset.view)));
+  caption.textContent = CAPTIONS.BASE;
+</script>
+</body>
+</html>
