@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/qmk/qmk_cli
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: ./build.sh
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: cocot46plus_mtourne
           path: cocot46plus_mtourne.hex
