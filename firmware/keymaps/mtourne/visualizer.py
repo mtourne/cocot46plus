@@ -23,15 +23,20 @@ PAGE = """<!doctype html>
   body { font-family: -apple-system, system-ui, sans-serif; margin: 16px; background: #fafafa; }
   #bar { display: flex; gap: 18px; align-items: center; margin-bottom: 10px; font-size: 15px; }
   #layer { font-weight: 600; }
-  #mods { font-size: 20px; letter-spacing: 6px; }
   #status { color: #777; }
   .down rect { fill: #ffd54f !important; stroke: #e65100 !important; stroke-width: 3px !important; }
+  /* Held modifiers, in the gap between the halves: four fixed slots in CAGS
+     order (as on the OLED), dim until held. */
+  #hud { position: absolute; display: flex; gap: 0.3em; transform: translate(-50%, -50%);
+         pointer-events: none; color: #7a4fb5; font-family: -apple-system, system-ui, sans-serif; }
+  #hud span { opacity: 0.13; transition: opacity 60ms; }
+  #hud span.on { opacity: 1; }
 </style>
+<div id="hud"></div>
 <div id="bar">
   <button id="connect">Connect keyboard</button>
   <span id="status">not connected</span>
   <span id="layer"></span>
-  <span id="mods"></span>
 </div>
 __SVG__
 <script>
@@ -45,6 +50,24 @@ const $ = (id) => document.getElementById(id);
 // cropped to it.
 const VIEWS = ["BASE", "BASE", "NAV", "NUM", "FUN", "MOUSE"];
 let current = null;
+const HUD = MODS.map(([, symbol]) => {
+  const span = document.createElement("span");
+  span.textContent = symbol;
+  $("hud").appendChild(span);
+  return span;
+});
+// Centre the modifier slots between the inner home-row keys (I and D).
+function placeHud() {
+  const group = document.querySelector("g.layer-" + current);
+  const left = group?.querySelector(".keypos-17"), right = group?.querySelector(".keypos-18");
+  if (!left || !right) return;
+  const a = left.getBoundingClientRect(), b = right.getBoundingClientRect();
+  const hud = $("hud");
+  hud.style.left = (a.right + b.left) / 2 + scrollX + "px";
+  hud.style.top = (a.top + a.bottom) / 2 + scrollY + "px";
+  hud.style.fontSize = a.height * 0.36 + "px";
+}
+addEventListener("resize", placeHud);
 function setView(name) {
   if (name === current) return;
   current = name;
@@ -54,12 +77,13 @@ function setView(name) {
   });
   const box = svg.getBBox();
   svg.setAttribute("viewBox", `${box.x - 6} ${box.y - 6} ${box.width + 12} ${box.height + 12}`);
+  placeHud();
 }
 
 function show(d) {
   if (d[0] !== 0x4B) return;  // 'K'
   $("layer").textContent = "Layer: " + (LAYERS[d[4]] ?? d[4]);
-  $("mods").textContent = MODS.filter(([bits]) => d[5] & bits).map(([, s]) => s).join(" ");
+  HUD.forEach((span, i) => span.classList.toggle("on", (d[5] & MODS[i][0]) !== 0));
   setView(VIEWS[d[4]] ?? "BASE");
   // Shift held: the NUM board swaps emphasis to the Shift partners.
   document.querySelector("svg").classList.toggle("shift", (d[5] & 0x22) !== 0);

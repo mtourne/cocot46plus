@@ -108,7 +108,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
         // The page (which already shows one board per layer, cropped), restyled
         // for the panel with a compact status bar: a
         // connection dot, a chip with the active layer in its LED colour
-        // (hidden on the base layer, like the OLED) and the held modifiers.
+        // (hidden on the base layer, like the OLED). The page itself shows the held
+        // modifiers between the halves.
         let style = """
             document.body.style.cssText = 'background: transparent; margin: 0 14px 12px; color: #f4f4f4; font: 13px -apple-system, system-ui; -webkit-user-select: none; cursor: default;';
             const css = document.createElement('style');
@@ -117,11 +118,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
               #dot { width: 8px; height: 8px; border-radius: 50%; background: #8a8a8a; }
               #dot.on { background: #3ddc84; box-shadow: 0 0 6px #3ddc84; }
               #chip { padding: 2px 10px; border-radius: 10px; font-weight: 600; font-size: 12px; letter-spacing: 0.6px; display: none; }
-              #mods { font-size: 17px; letter-spacing: 5px; }
-              .key rect { transition: fill 60ms; }`;
+              .key rect { transition: fill 60ms; }
+              #hud { color: #fff; }
+              #hud span { opacity: 0.18; }
+              #hud span.on { opacity: 1; text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); }`;
             document.head.appendChild(css);
             document.getElementById('bar').innerHTML =
-              '<span id="dot"></span><span id="chip"></span><span id="mods"></span>' +
+              '<span id="dot"></span><span id="chip"></span>' +
               '<span id="status" hidden></span><span id="layer" hidden></span>';
             const CHIPS = { 2: ['NAV', '#fde68a', '#5a4300'], 3: ['NUM', '#bbf7d0', '#14532d'],
                             4: ['FUN', '#f5d0fe', '#701a75'], 5: ['MOUSE', '#a5f3fc', '#164e63'] };

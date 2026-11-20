@@ -81,6 +81,9 @@ lost; use the Apple menu instead.
   where there is one (CPI 875, ROTATE +30, SCROLL SPEED 7, OS DVORAK, MAC).
 - **MOUSE:** turns on by itself while the ball moves. Mouse buttons on the
   home row of both hands, hold-to-scroll on the pinkies.
+  For a modifier-click, hold Cmd (left pink thumb, or hold right Tab), Alt
+  (left purple thumb, or hold right Esc), or the outer Ctrl or Shift, then
+  click. Plain modifiers don't turn the MOUSE layer off.
 
 The OLED is kept light. Its lower half shows a large OS icon on the left, the
 layer (NAV, NUM, FUNC, MOUSE, or CAPS during Caps Word; empty on the base
