@@ -121,7 +121,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate, 
               .key rect { transition: fill 60ms; }
               #hud { color: #fff; }
               #hud span { opacity: 0.18; }
-              #hud span.on { opacity: 1; text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); }`;
+              #hud span.on { opacity: 1; text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); }
+              #ball { color: #a9bcff; }`;
             document.head.appendChild(css);
             document.getElementById('bar').innerHTML =
               '<span id="dot"></span><span id="chip"></span>' +

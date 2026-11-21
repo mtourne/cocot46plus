@@ -12,7 +12,7 @@ KEY = [
     ("#222", "black: type"),
     ("#888", "grey: hold"),
     ("#d0312d", "red: NUM (hold green)"),
-    ("#2b4bd6", "blue: NAV (hold yellow)"),
+    ("#2b4bd6", "blue: NAV (hold yellow; the ball scrolls)"),
     ("#2e8b2e", "green: FUN (green + cyan)"),
     ("#0a9396", "cyan: MOUSE (ball)"),
     ("#7a4fb5", "purple: with ⌘/⇧"),

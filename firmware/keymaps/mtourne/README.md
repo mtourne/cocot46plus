@@ -39,8 +39,8 @@ full hold, mirroring the left thumbs so a shortcut on a left-hand letter (⌘Q,
 repeat it.
 
 The left thumb deletes (Bksp, delete word) and the right one types (Enter,
-Space). On NAV, the left yellow and green keys are delete word and delete
-line. ⌘Tab, Alt+Tab and ⌘Enter are two-thumb chords: left pink (Cmd) or
+Space). On NAV, the left yellow key is a plain Bksp, so it repeats while
+held, and the green key deletes the line. ⌘Tab, Alt+Tab and ⌘Enter are two-thumb chords: left pink (Cmd) or
 purple (Alt) plus the right key.
 
 Tapped, the right purple key works like QMK's Grave Escape: Esc on its own, `` ` `` with Cmd held (⌘\`
@@ -55,12 +55,14 @@ lost; use the Apple menu instead.
   `/`, `-` and Shift on the right one. Press both outer Shifts together for
   Caps Word: capitals until the end of the word (`MAX_SIZE`), shown as CAPS
   on the OLED.
-- **NAV:** arrows with line start/end and page up/down on the right, delete
-  keys below them (delete line, Bksp, delete word, Delete), and delete word on
-  the left green thumb. On the left: editing keys, Undo/Cut/Copy/Paste/Redo,
+- **NAV:** on the right, arrows with line start/end above Left and Right,
+  word jumps below them (⌥←/⌥→, Ctrl+←/→ on Windows) with Bksp between,
+  page up/down and forward Delete on the inner column, and document
+  start/end and delete line on the pinky column. The cursor jumps repeat
+  while held. On the left thumbs: Bksp (repeats) and delete line. On the left: editing keys, Undo/Cut/Copy/Paste/Redo,
   and plain Ctrl, Alt, Cmd and Shift on the home row (same order as the
   home-row mods), so you can hold them with the arrows in any order, for
-  example Shift+Alt+Right to select a word. The cheat sheet leaves them
+  example Shift with a word jump to select a word. The cheat sheet leaves them
   out because they match each key's hold; on NAV the live view keeps the
   hold icons at full strength instead. The
   trackball scrolls.
@@ -80,7 +82,7 @@ lost; use the Apple menu instead.
   The OLED shows the short name of each FUN key you press, with the new value
   where there is one (CPI 875, ROTATE +30, SCROLL SPEED 7, OS DVORAK, MAC).
 - **MOUSE:** turns on by itself while the ball moves. Mouse buttons on the
-  home row of both hands, hold-to-scroll on the pinkies.
+  home row of both hands; hold K or M (index fingers, bottom row) to scroll.
   For a modifier-click, hold Cmd (left pink thumb, or hold right Tab), Alt
   (left purple thumb, or hold right Esc), or the outer Ctrl or Shift, then
   click. Plain modifiers don't turn the MOUSE layer off.

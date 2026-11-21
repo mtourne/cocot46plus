@@ -15,7 +15,8 @@ the [cheat sheet](docs/cheatsheet.pdf).
 Hold a home-row letter for a modifier. Hold a thumb key for a layer: Bksp or
 Space for NAV (arrows and editing), Delete word or Enter for NUM (numpad and
 symbols). A green thumb key plus the cyan key next to it gives FUN (F-keys,
-media, settings). Moving the ball turns on MOUSE.
+media, settings). Moving the ball turns on MOUSE; holding NAV makes it
+scroll.
 
 On NUM, Shift gives the partner you'd expect: `*` and `/`, `+` and `-`,
 `[` and `{`.

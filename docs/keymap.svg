@@ -656,6 +656,9 @@ rect.held { stroke: #444; stroke-width: 2px; }
 </g>
 <g transform="translate(695, 54) rotate(-10.0)" class="key keypos-10">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Doc</tspan><tspan x="0" dy="1.2em">top</tspan>
+</text>
 </g>
 <g transform="translate(750, 45) rotate(-10.0)" class="key trans keypos-11">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -702,6 +705,9 @@ rect.held { stroke: #444; stroke-width: 2px; }
 </g>
 <g transform="translate(705, 109) rotate(-10.0)" class="key keypos-22">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Doc</tspan><tspan x="0" dy="1.2em">end</tspan>
+</text>
 </g>
 <g transform="translate(760, 100) rotate(-10.0)" class="key trans keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -733,26 +739,29 @@ rect.held { stroke: #444; stroke-width: 2px; }
 </g>
 <g transform="translate(488, 173) rotate(-10.0)" class="key keypos-30">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Del</tspan><tspan x="0" dy="1.2em">line</tspan>
-</text>
+<text x="0" y="0" class="key tap">Del</text>
 </g>
 <g transform="translate(543, 158) rotate(-10.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Bksp</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">←</tspan><tspan x="0" dy="1.2em">word</tspan>
+</text>
 </g>
 <g transform="translate(597, 143) rotate(-10.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.6em">Del</tspan><tspan x="0" dy="1.2em">word</tspan>
-</text>
+<text x="0" y="0" class="key tap">Bksp</text>
 </g>
 <g transform="translate(654, 147) rotate(-10.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Del</text>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">word</tspan><tspan x="0" dy="1.2em">→</tspan>
+</text>
 </g>
 <g transform="translate(714, 165) rotate(-10.0)" class="key keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">
+<tspan x="0" dy="-0.6em">Del</tspan><tspan x="0" dy="1.2em">line</tspan>
+</text>
 </g>
 <g transform="translate(770, 155) rotate(-10.0)" class="key trans keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -768,7 +777,7 @@ rect.held { stroke: #444; stroke-width: 2px; }
 </g>
 <g transform="translate(293, 235) rotate(20.0)" class="key held th-yellow keypos-38">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held th-yellow"/>
-<text x="0" y="0" class="key held th-yellow tap">Del</text>
+<text x="0" y="0" class="key held th-yellow tap">Bksp</text>
 </g>
 <g transform="translate(362, 264) rotate(30.0)" class="key th-green keypos-39">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key th-green"/>
@@ -1328,9 +1337,9 @@ rect.held { stroke: #444; stroke-width: 2px; }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(97, 109) rotate(10.0)" class="key keypos-13">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:mouse-move-vertical"/>
+<g transform="translate(97, 109) rotate(10.0)" class="key trans keypos-13">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
 <g transform="translate(157, 92) rotate(10.0)" class="key keypos-14">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -1364,9 +1373,9 @@ rect.held { stroke: #444; stroke-width: 2px; }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <use href="#mdi:mouse-scroll-wheel" xlink:href="#mdi:mouse-scroll-wheel" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:mouse-scroll-wheel"/>
 </g>
-<g transform="translate(705, 109) rotate(-10.0)" class="key keypos-22">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:mouse-move-vertical"/>
+<g transform="translate(705, 109) rotate(-10.0)" class="key trans keypos-22">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<text x="0" y="0" class="key trans tap">▽</text>
 </g>
 <g transform="translate(760, 100) rotate(-10.0)" class="key trans keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -1388,9 +1397,9 @@ rect.held { stroke: #444; stroke-width: 2px; }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(259, 158) rotate(10.0)" class="key trans keypos-28">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(259, 158) rotate(10.0)" class="key keypos-28">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:mouse-move-vertical"/>
 </g>
 <g transform="translate(314, 173) rotate(10.0)" class="key trans keypos-29">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -1400,9 +1409,9 @@ rect.held { stroke: #444; stroke-width: 2px; }
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
 </g>
-<g transform="translate(543, 158) rotate(-10.0)" class="key trans keypos-31">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
-<text x="0" y="0" class="key trans tap">▽</text>
+<g transform="translate(543, 158) rotate(-10.0)" class="key keypos-31">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-11" y="-11" height="22" width="22.0" class="key tap glyph mdi:mouse-move-vertical"/>
 </g>
 <g transform="translate(597, 143) rotate(-10.0)" class="key trans keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>

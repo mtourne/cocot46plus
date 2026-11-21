@@ -155,7 +155,8 @@
       </div>
       <div>
         <h3><span class="swatch" style="background: var(--nav)"></span>NAV</h3>
-        <p>Arrows, Home and End, page keys and four delete keys on the right hand.
+        <p>Arrows, Home and End, word and page jumps, and Bksp and Delete on the right
+          hand.
           Undo, Cut, Copy, Paste and Redo on the left, with plain Ctrl, Alt, Cmd and
           Shift under the fingers for selecting with the arrows. The ball scrolls.</p>
       </div>
@@ -175,7 +176,8 @@
       <div>
         <h3><span class="swatch" style="background: var(--mouse)"></span>MOUSE</h3>
         <p>Turns on by itself when the ball moves. Clicks sit on the home row of both
-          hands, and the little fingers hold to scroll.</p>
+          hands; hold K or M, under the index fingers, to scroll. Holding NAV makes the
+          ball scroll too.</p>
       </div>
     </div>
   </section>
@@ -251,10 +253,10 @@ cd cocot46plus
 <script>
   const CAPTIONS = {
     BASE: "Dvorak letters, with Ctrl, Alt, Cmd and Shift under the home row when held. Both outer Shifts together turn on Caps Word.",
-    NAV: "Hold Bksp or Space. Arrows, Home/End and page keys on the right, delete keys below them, editing keys and plain modifiers on the left.",
+    NAV: "Hold Bksp or Space. Arrows, Home/End and page keys on the right, word jumps and Bksp below them, editing keys and plain modifiers on the left. The ball scrolls.",
     NUM: "Hold Delete word or Enter. The small red characters are what Shift gives on this layer.",
     FUN: "Hold a green key and the cyan key next to it. F-keys, media, LEDs, trackball settings and the mode switches.",
-    MOUSE: "Move the ball. Clicks on the home row, scrolling on the little fingers.",
+    MOUSE: "Move the ball. Clicks on the home row; hold K or M to scroll.",
   };
   const frame = document.querySelector(".board iframe");
   const caption = document.querySelector(".board .caption");

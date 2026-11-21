@@ -168,7 +168,7 @@ layers:
   - Home
   - ↑
   - End
-  - ''
+  - Doc top
   - t: ▽
     type: trans
   - t: ▽
@@ -182,7 +182,7 @@ layers:
   - ←
   - ↓
   - →
-  - ''
+  - Doc end
   - t: ▽
     type: trans
   - t: ▽
@@ -192,18 +192,18 @@ layers:
   - Copy
   - Paste
   - Redo
-  - Del line
-  - Bksp
-  - Del word
   - Del
-  - ''
+  - ← word
+  - Bksp
+  - word →
+  - Del line
   - t: ▽
     type: trans
   - t: ▽
     type: trans th-purple
   - t: ▽
     type: trans th-pink
-  - t: Del
+  - t: Bksp
     type: held th-yellow
   - t: Del line
     type: th-green
@@ -409,7 +409,8 @@ layers:
     type: trans
   - t: ▽
     type: trans
-  - $$mdi:mouse-move-vertical$$
+  - t: ▽
+    type: trans
   - $$mdi:mouse-scroll-wheel$$
   - $$mdi:mouse-right-click$$
   - $$mdi:mouse-left-click$$
@@ -420,25 +421,24 @@ layers:
   - $$mdi:mouse-left-click$$
   - $$mdi:mouse-right-click$$
   - $$mdi:mouse-scroll-wheel$$
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
+  - t: ▽
+    type: trans
   - $$mdi:mouse-move-vertical$$
   - t: ▽
     type: trans
   - t: ▽
     type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
-  - t: ▽
-    type: trans
+  - $$mdi:mouse-move-vertical$$
   - t: ▽
     type: trans
   - t: ▽

@@ -13,8 +13,11 @@
          pointer-events: none; color: #7a4fb5; font-family: -apple-system, system-ui, sans-serif; }
   #hud span { opacity: 0.13; transition: opacity 60ms; }
   #hud span.on { opacity: 1; }
+  /* What the ball does on this layer, under the modifier slots. */
+  #ball { position: absolute; transform: translate(-50%, 0); pointer-events: none; white-space: nowrap;
+          color: #2b4bd6; font: 600 13px -apple-system, system-ui, sans-serif; }
 </style>
-<div id="hud"></div>
+<div id="hud"></div><div id="ball"></div>
 <div id="bar">
   <button id="connect">Connect keyboard</button>
   <span id="status">not connected</span>
@@ -268,6 +271,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">L</text>
 <text x="38" y="-38" class="key tr">0</text>
+<text x="38" y="38" class="key br">Doc top</text>
 </g>
 <g transform="translate(1152, 69) rotate(-10.0)" class="key keypos-11">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -338,6 +342,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <text x="0" y="0" class="key tap">S</text>
 <text x="38" y="-38" class="key tr">0</text>
 <use href="#mdi:ship-wheel" xlink:href="#mdi:ship-wheel" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:ship-wheel"/>
+<text x="38" y="38" class="key br">Doc end</text>
 </g>
 <g transform="translate(1167, 153) rotate(-10.0)" class="key keypos-23">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -382,30 +387,31 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">B</text>
 <text x="38" y="-38" class="key tr">%</text>
-<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del line</tspan></text>
+<text x="38" y="38" class="key br">Del</text>
 </g>
 <g transform="translate(833, 243) rotate(-10.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">M</text>
 <text x="38" y="-38" class="key tr">1</text>
-<text x="38" y="38" class="key br">Bksp</text>
+<text x="38" y="38" class="key br">← word</text>
 </g>
 <g transform="translate(916, 219) rotate(-10.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">W</text>
 <text x="38" y="-38" class="key tr">2</text>
-<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del word</tspan></text>
+<text x="38" y="38" class="key br">Bksp</text>
 </g>
 <g transform="translate(1005, 225) rotate(-10.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">V</text>
 <text x="38" y="-38" class="key tr">3</text>
-<text x="38" y="38" class="key br">Del</text>
+<text x="38" y="38" class="key br">word →</text>
 </g>
 <g transform="translate(1097, 253) rotate(-10.0)" class="key keypos-34">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">Z</text>
 <text x="38" y="-38" class="key tr">.</text>
+<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del line</tspan></text>
 </g>
 <g transform="translate(1182, 238) rotate(-10.0)" class="key keypos-35">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -425,7 +431,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <text x="0" y="0" class="key th-yellow tap">Bksp</text>
 <a href="#NAV">
 <text x="-38" y="38" class="key th-yellow bl layer-activator">NAV</text>
-</a><text x="38" y="38" class="key th-yellow br">Del</text>
+</a><text x="38" y="38" class="key th-yellow br">Bksp</text>
 </g>
 <g transform="translate(556, 406) rotate(30.0)" class="key th-green keypos-39">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-green"/>
@@ -551,6 +557,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">L</text>
 <text x="38" y="-38" class="key tr">0</text>
+<text x="38" y="38" class="key br">Doc top</text>
 </g>
 <g transform="translate(1152, 69) rotate(-10.0)" class="key keypos-11">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -621,6 +628,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <text x="0" y="0" class="key tap">S</text>
 <text x="38" y="-38" class="key tr">0</text>
 <use href="#mdi:ship-wheel" xlink:href="#mdi:ship-wheel" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:ship-wheel"/>
+<text x="38" y="38" class="key br">Doc end</text>
 </g>
 <g transform="translate(1167, 153) rotate(-10.0)" class="key keypos-23">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -665,30 +673,31 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">B</text>
 <text x="38" y="-38" class="key tr">%</text>
-<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del line</tspan></text>
+<text x="38" y="38" class="key br">Del</text>
 </g>
 <g transform="translate(833, 243) rotate(-10.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">M</text>
 <text x="38" y="-38" class="key tr">1</text>
-<text x="38" y="38" class="key br">Bksp</text>
+<text x="38" y="38" class="key br">← word</text>
 </g>
 <g transform="translate(916, 219) rotate(-10.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">W</text>
 <text x="38" y="-38" class="key tr">2</text>
-<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del word</tspan></text>
+<text x="38" y="38" class="key br">Bksp</text>
 </g>
 <g transform="translate(1005, 225) rotate(-10.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">V</text>
 <text x="38" y="-38" class="key tr">3</text>
-<text x="38" y="38" class="key br">Del</text>
+<text x="38" y="38" class="key br">word →</text>
 </g>
 <g transform="translate(1097, 253) rotate(-10.0)" class="key keypos-34">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">Z</text>
 <text x="38" y="-38" class="key tr">.</text>
+<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del line</tspan></text>
 </g>
 <g transform="translate(1182, 238) rotate(-10.0)" class="key keypos-35">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -708,7 +717,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <text x="0" y="0" class="key th-yellow tap">Bksp</text>
 <a href="#NAV">
 <text x="-38" y="38" class="key th-yellow bl layer-activator">NAV</text>
-</a><text x="38" y="38" class="key th-yellow br">Del</text>
+</a><text x="38" y="38" class="key th-yellow br">Bksp</text>
 </g>
 <g transform="translate(556, 406) rotate(30.0)" class="key th-green keypos-39">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-green"/>
@@ -1124,6 +1133,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <text x="0" y="0" class="key tap">L</text>
 <text x="-38" y="-38" class="key tl">F10</text>
 <text x="38" y="-38" class="key tr">0</text>
+<text x="38" y="38" class="key br">Doc top</text>
 </g>
 <g transform="translate(1152, 69) rotate(-10.0)" class="key keypos-11">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -1204,6 +1214,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <text x="-38" y="-38" class="key tl">F11</text>
 <text x="38" y="-38" class="key tr">0</text>
 <use href="#mdi:ship-wheel" xlink:href="#mdi:ship-wheel" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:ship-wheel"/>
+<text x="38" y="38" class="key br">Doc end</text>
 </g>
 <g transform="translate(1167, 153) rotate(-10.0)" class="key keypos-23">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -1254,34 +1265,35 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <text x="0" y="0" class="key tap">B</text>
 <text x="-38" y="-38" class="key tl"><tspan style="font-size: 64%">Scrl invert</tspan></text>
 <text x="38" y="-38" class="key tr">%</text>
-<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del line</tspan></text>
+<text x="38" y="38" class="key br">Del</text>
 </g>
 <g transform="translate(833, 243) rotate(-10.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">M</text>
 <text x="-38" y="-38" class="key tl">F1</text>
 <text x="38" y="-38" class="key tr">1</text>
-<text x="38" y="38" class="key br">Bksp</text>
+<text x="38" y="38" class="key br">← word</text>
 </g>
 <g transform="translate(916, 219) rotate(-10.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">W</text>
 <text x="-38" y="-38" class="key tl">F2</text>
 <text x="38" y="-38" class="key tr">2</text>
-<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del word</tspan></text>
+<text x="38" y="38" class="key br">Bksp</text>
 </g>
 <g transform="translate(1005, 225) rotate(-10.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">V</text>
 <text x="-38" y="-38" class="key tl">F3</text>
 <text x="38" y="-38" class="key tr">3</text>
-<text x="38" y="38" class="key br">Del</text>
+<text x="38" y="38" class="key br">word →</text>
 </g>
 <g transform="translate(1097, 253) rotate(-10.0)" class="key keypos-34">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">Z</text>
 <text x="-38" y="-38" class="key tl">F12</text>
 <text x="38" y="-38" class="key tr">.</text>
+<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del line</tspan></text>
 </g>
 <g transform="translate(1182, 238) rotate(-10.0)" class="key keypos-35">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -1302,7 +1314,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <text x="0" y="0" class="key th-yellow tap">Bksp</text>
 <a href="#NAV">
 <text x="-38" y="38" class="key th-yellow bl layer-activator">NAV</text>
-</a><text x="38" y="38" class="key th-yellow br">Del</text>
+</a><text x="38" y="38" class="key th-yellow br">Bksp</text>
 </g>
 <g transform="translate(556, 406) rotate(30.0)" class="key th-green keypos-39">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-green"/>
@@ -1430,6 +1442,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">L</text>
 <text x="38" y="-38" class="key tr">0</text>
+<text x="38" y="38" class="key br">Doc top</text>
 </g>
 <g transform="translate(1152, 69) rotate(-10.0)" class="key keypos-11">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -1442,7 +1455,6 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <g transform="translate(149, 168) rotate(10.0)" class="key navmod keypos-13">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key navmod"/>
 <text x="0" y="0" class="key navmod tap">A</text>
-<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-38" y="-9" height="18" width="18.0" class="key navmod left glyph mdi:mouse-move-vertical"/>
 <text x="38" y="-38" class="key navmod tr">/</text>
 <use href="#mdi:ship-wheel" xlink:href="#mdi:ship-wheel" x="-38" y="20" height="18" width="18.0" class="key navmod bl glyph mdi:ship-wheel"/>
 </g>
@@ -1505,9 +1517,9 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <g transform="translate(1082, 168) rotate(-10.0)" class="key keypos-22">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">S</text>
-<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-move-vertical"/>
 <text x="38" y="-38" class="key tr">0</text>
 <use href="#mdi:ship-wheel" xlink:href="#mdi:ship-wheel" x="-38" y="20" height="18" width="18.0" class="key bl glyph mdi:ship-wheel"/>
+<text x="38" y="38" class="key br">Doc end</text>
 </g>
 <g transform="translate(1167, 153) rotate(-10.0)" class="key keypos-23">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -1539,6 +1551,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <g transform="translate(398, 243) rotate(10.0)" class="key keypos-28">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">K</text>
+<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-move-vertical"/>
 <text x="38" y="-38" class="key tr">]</text>
 <text x="38" y="38" class="key br">Paste</text>
 </g>
@@ -1552,30 +1565,32 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">B</text>
 <text x="38" y="-38" class="key tr">%</text>
-<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del line</tspan></text>
+<text x="38" y="38" class="key br">Del</text>
 </g>
 <g transform="translate(833, 243) rotate(-10.0)" class="key keypos-31">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">M</text>
+<use href="#mdi:mouse-move-vertical" xlink:href="#mdi:mouse-move-vertical" x="-38" y="-9" height="18" width="18.0" class="key left glyph mdi:mouse-move-vertical"/>
 <text x="38" y="-38" class="key tr">1</text>
-<text x="38" y="38" class="key br">Bksp</text>
+<text x="38" y="38" class="key br">← word</text>
 </g>
 <g transform="translate(916, 219) rotate(-10.0)" class="key keypos-32">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">W</text>
 <text x="38" y="-38" class="key tr">2</text>
-<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del word</tspan></text>
+<text x="38" y="38" class="key br">Bksp</text>
 </g>
 <g transform="translate(1005, 225) rotate(-10.0)" class="key keypos-33">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">V</text>
 <text x="38" y="-38" class="key tr">3</text>
-<text x="38" y="38" class="key br">Del</text>
+<text x="38" y="38" class="key br">word →</text>
 </g>
 <g transform="translate(1097, 253) rotate(-10.0)" class="key keypos-34">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
 <text x="0" y="0" class="key tap">Z</text>
 <text x="38" y="-38" class="key tr">.</text>
+<text x="38" y="38" class="key br"><tspan style="font-size: 88%">Del line</tspan></text>
 </g>
 <g transform="translate(1182, 238) rotate(-10.0)" class="key keypos-35">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key"/>
@@ -1595,7 +1610,7 @@ text.hold { font-size: 10px; fill: #7a4fb5; }
 <text x="0" y="0" class="key th-yellow tap">Bksp</text>
 <a href="#NAV">
 <text x="-38" y="38" class="key th-yellow bl layer-activator">NAV</text>
-</a><text x="38" y="38" class="key th-yellow br">Del</text>
+</a><text x="38" y="38" class="key th-yellow br">Bksp</text>
 </g>
 <g transform="translate(556, 406) rotate(30.0)" class="key th-green keypos-39">
 <rect rx="6" ry="6" x="-40" y="-40" width="80" height="80" class="key th-green"/>
@@ -1686,7 +1701,13 @@ function placeHud() {
   hud.style.left = (a.right + b.left) / 2 + scrollX + "px";
   hud.style.top = (a.top + a.bottom) / 2 + scrollY + "px";
   hud.style.fontSize = a.height * 0.36 + "px";
+  const ball = $("ball");
+  ball.textContent = BALL[current] ?? "";
+  ball.style.left = hud.style.left;
+  ball.style.top = (a.top + a.bottom) / 2 + scrollY + a.height * 0.32 + "px";
+  ball.style.fontSize = a.height * 0.15 + "px";
 }
+const BALL = { NAV: "ball scrolls" };
 addEventListener("resize", placeHud);
 function setView(name) {
   if (name === current) return;

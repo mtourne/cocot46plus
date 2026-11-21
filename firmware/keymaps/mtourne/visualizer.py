@@ -31,8 +31,11 @@ PAGE = """<!doctype html>
          pointer-events: none; color: #7a4fb5; font-family: -apple-system, system-ui, sans-serif; }
   #hud span { opacity: 0.13; transition: opacity 60ms; }
   #hud span.on { opacity: 1; }
+  /* What the ball does on this layer, under the modifier slots. */
+  #ball { position: absolute; transform: translate(-50%, 0); pointer-events: none; white-space: nowrap;
+          color: #2b4bd6; font: 600 13px -apple-system, system-ui, sans-serif; }
 </style>
-<div id="hud"></div>
+<div id="hud"></div><div id="ball"></div>
 <div id="bar">
   <button id="connect">Connect keyboard</button>
   <span id="status">not connected</span>
@@ -66,7 +69,13 @@ function placeHud() {
   hud.style.left = (a.right + b.left) / 2 + scrollX + "px";
   hud.style.top = (a.top + a.bottom) / 2 + scrollY + "px";
   hud.style.fontSize = a.height * 0.36 + "px";
+  const ball = $("ball");
+  ball.textContent = BALL[current] ?? "";
+  ball.style.left = hud.style.left;
+  ball.style.top = (a.top + a.bottom) / 2 + scrollY + a.height * 0.32 + "px";
+  ball.style.fontSize = a.height * 0.15 + "px";
 }
+const BALL = { NAV: "ball scrolls" };
 addEventListener("resize", placeHud);
 function setView(name) {
   if (name === current) return;

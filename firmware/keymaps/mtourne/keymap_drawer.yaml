@@ -17,7 +17,10 @@ parse_config:
     CK_COPY: Copy
     CK_PSTE: Paste
     CK_REDO: Redo
-    CK_DWRD: Del word
+    CK_WLFT: ← word
+    CK_WRGT: word →
+    CK_DTOP: Doc top
+    CK_DBOT: Doc end
     F13: /
     F14: (
     F15: )

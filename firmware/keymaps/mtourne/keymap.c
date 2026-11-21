@@ -27,16 +27,19 @@ enum custom_keycodes {
     CK_COPY,
     CK_PSTE,
     CK_REDO,
-    // Delete the previous word: Option+Bksp on Mac, Ctrl+Bksp on Windows.
-    CK_DWRD,
     // Delete to the start of the line: Cmd+Bksp on Mac, Shift+Home then Bksp
     // on Windows.
     CK_DLIN,
     // LED colour: steps through white and eight colours; Shift steps back.
     CK_HUE,
-    // Line start/end: Cmd+Left/Right on Mac, Home/End on Windows.
+    // Cursor jumps, sent from jump_keys (Mac, Windows) and repeated while
+    // held: line start/end, previous/next word, document start/end.
     CK_HOME,
     CK_END,
+    CK_WLFT,
+    CK_WRGT,
+    CK_DTOP,
+    CK_DBOT,
     // OS setting, saved on the keyboard.
     OS_MAC,
     OS_WIN,
@@ -136,19 +139,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                    XXXXXXX, MS_BTN3,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
   ),
   // Right hand: arrows with Home/End above Left/Right (line start/end, which is
-  // Cmd+Left/Right on Mac), PgUp/PgDn on the inner column, delete keys below
-  // (delete line, Bksp, delete word, forward Delete). Left thumbs: Delete
-  // (yellow) and delete line (green).
+  // Cmd+Left/Right on Mac), word jumps below them with Bksp between, forward
+  // Delete on the inner column under PgUp/PgDn, and document start/end and
+  // delete line on the pinky column. Left thumbs: Bksp (yellow, plain here so
+  // it repeats when held) and delete line (green).
   // Left hand after dlip: editing keys, plain Ctrl Alt Cmd Shift on the home
   // row (the home-row mods' order, held in any order with the arrows, e.g.
   // Shift+Alt+Right selects a word) and clipboard keys. They are mod keycodes
   // with no key so they go through mod_config and swap Ctrl/Win on Windows
   // like the home-row mods. The trackball scrolls while this layer is on.
   [_NAV] = LAYOUT(
-      _______, XXXXXXX, KC_DEL,  KC_ESC,  KC_ENT,  XXXXXXX,              KC_PGUP, CK_HOME, KC_UP,   CK_END,  XXXXXXX, _______,
-      _______, NV_CTL,  NV_ALT,  NV_GUI,  NV_SFT,  XXXXXXX,              KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, _______,
-      _______, CK_UNDO, CK_CUT,  CK_COPY, CK_PSTE, CK_REDO,              CK_DLIN, KC_BSPC, CK_DWRD, KC_DEL,  XXXXXXX, _______,
-                        _______, _______, KC_DEL,  CK_DLIN, _______,     _______, _______, _______, _______, _______,
+      _______, XXXXXXX, KC_DEL,  KC_ESC,  KC_ENT,  XXXXXXX,              KC_PGUP, CK_HOME, KC_UP,   CK_END,  CK_DTOP, _______,
+      _______, NV_CTL,  NV_ALT,  NV_GUI,  NV_SFT,  XXXXXXX,              KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, CK_DBOT, _______,
+      _______, CK_UNDO, CK_CUT,  CK_COPY, CK_PSTE, CK_REDO,              KC_DEL,  CK_WLFT, KC_BSPC, CK_WRGT, CK_DLIN, _______,
+                        _______, _______, KC_BSPC, CK_DLIN, _______,     _______, _______, _______, _______, _______,
                                                    _______, _______,     _______, _______, _______, _______
   ),
   // One rule: Shift gives the expected partner. Right hand: numpad shaped like
@@ -179,12 +183,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // On while the trackball moves, off after a short pause or when you type.
   // Mouse buttons sit where they are on NAV, mirrored on the right hand so
   // either hand can click while the other rolls the ball (Mse 1 under the
-  // index finger, hold-to-scroll under the pinky). Everything else falls
-  // through.
+  // index finger). Hold-to-scroll is on the index fingers' bottom-row keys
+  // (K and M), a strong finger for a held key, and fits a board without an
+  // outer column. Everything else falls through.
   [_MOUSE] = LAYOUT(
       _______, _______, _______, _______, _______, _______,              _______, _______, _______, _______, _______, _______,
-      _______, CK_SCRL, MS_BTN3, MS_BTN2, MS_BTN1, _______,              _______, MS_BTN1, MS_BTN2, MS_BTN3, CK_SCRL, _______,
-      _______, _______, _______, _______, _______, _______,              _______, _______, _______, _______, _______, _______,
+      _______, _______, MS_BTN3, MS_BTN2, MS_BTN1, _______,              _______, MS_BTN1, MS_BTN2, MS_BTN3, _______, _______,
+      _______, _______, _______, _______, CK_SCRL, _______,              _______, CK_SCRL, _______, _______, _______, _______,
                         _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______,
                                                    _______, _______,     _______, _______, _______, _______
   ),
@@ -346,6 +351,16 @@ static const uint16_t PROGMEM symbol_keys[][2] = {
     [SY_RBRC - SY_EQL] = {KC_RBRC, DV_RBRC},
 };
 
+// Cursor jumps: {Mac, Windows}.
+static const uint16_t PROGMEM jump_keys[][2] = {
+    [CK_HOME - CK_HOME] = {G(KC_LEFT), KC_HOME},
+    [CK_END - CK_HOME]  = {G(KC_RGHT), KC_END},
+    [CK_WLFT - CK_HOME] = {A(KC_LEFT), C(KC_LEFT)},
+    [CK_WRGT - CK_HOME] = {A(KC_RGHT), C(KC_RGHT)},
+    [CK_DTOP - CK_HOME] = {G(KC_UP), C(KC_HOME)},
+    [CK_DBOT - CK_HOME] = {G(KC_DOWN), C(KC_END)},
+};
+
 // NUM operator keys: {US, Dvorak} for the key, then for its Shift partner.
 static const uint16_t PROGMEM operator_keys[][4] = {
     [NP_STAR - NP_STAR] = {KC_ASTR, KC_ASTR, KC_SLSH, DV_SLSH},
@@ -481,6 +496,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
     }
 
+    if (keycode >= CK_HOME && keycode <= CK_DBOT) {
+        uint16_t code = pgm_read_word(&jump_keys[keycode - CK_HOME][user_config.is_windows]);
+        if (record->event.pressed) {
+            register_code16(code);
+        } else {
+            unregister_code16(code);
+        }
+        return false;
+    }
+
     if (keycode == CK_SCRL) {
         cocot_set_scroll_mode(record->event.pressed || layer_state_is(_NAV));
         return false;
@@ -509,12 +534,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 tap_clipboard(KC_Z, DV_Z, MOD_LSFT);
             }
             return false;
-        case CK_HOME:
-            tap_code16(user_config.is_windows ? KC_HOME : G(KC_LEFT));
-            return false;
-        case CK_END:
-            tap_code16(user_config.is_windows ? KC_END : G(KC_RGHT));
-            return false;
         case CK_HUE: {
             static uint8_t colour = 0;
             uint8_t        count  = sizeof(led_colours) / sizeof(led_colours[0]);
@@ -529,9 +548,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             } else {
                 tap_code16(G(KC_BSPC));
             }
-            return false;
-        case CK_DWRD:
-            tap_code16(user_config.is_windows ? C(KC_BSPC) : A(KC_BSPC));
             return false;
         case OS_MAC:
         case OS_WIN:
