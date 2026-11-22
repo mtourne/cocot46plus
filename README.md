@@ -32,7 +32,7 @@ Cocot Live (a floating macOS panel with a menu bar icon) light up each key as
 you press it.
 
 The [keymap README](firmware/keymaps/mtourne/README.md) covers every key and
-setting.
+setting. [FUTURE.md](FUTURE.md) collects notes on a wireless version.
 
 ## Build and flash
 
