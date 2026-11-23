@@ -14,6 +14,7 @@ The OS icons are 12x16 too, at 0x90 (Apple, outline) and 0x94 (Windows),
 same cell order.
 """
 
+FONT_START = 0x20  # first character kept in glcdfont.c (OLED_FONT_START)
 MOD_BASE = 0x80
 
 # 12x12 icons with 2-pixel strokes, centred in 12x16 when drawn.
@@ -145,7 +146,7 @@ def main():
     lines = open("glcdfont.c").read().split("\n")
     first = next(i for i, line in enumerate(lines) if line.startswith("0x"))
     for code, cols in glyphs.items():
-        lines[first + code] = ", ".join("0x%02X" % v for v in cols) + ",  // 0x%02X art" % code
+        lines[first + code - FONT_START] = ", ".join("0x%02X" % v for v in cols) + ",  // 0x%02X art" % code
     open("glcdfont.c", "w").write("\n".join(lines))
 
 

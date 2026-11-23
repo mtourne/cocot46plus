@@ -1,8 +1,11 @@
 #pragma once
 
-// Tap-hold timing. Starting points from dlip's engram keymap and the QMK docs.
+// Tap-hold timing. Thumb keys switch layer after 190 ms (dlip's engram value);
+// home-row keys wait 250 ms (Getreuer's advice, see get_tapping_term in
+// keymap.c), so a letter held a little long stays a letter.
 #undef TAPPING_TERM
 #define TAPPING_TERM 190
+#define TAPPING_TERM_PER_KEY
 #define PERMISSIVE_HOLD
 #define PERMISSIVE_HOLD_PER_KEY
 
@@ -10,8 +13,9 @@
 // chordal_hold_layout in keymap.c) so Space/Nav works with either hand.
 #define CHORDAL_HOLD
 
-// While typing fast, home-row keys always act as letters (Shift uses a
-// shorter window, see get_flow_tap_term in keymap.c).
+// While typing fast, home-row keys always act as letters: within this time of
+// any key except a modifier (Shift uses a shorter window, see
+// get_flow_tap_term in keymap.c).
 #define FLOW_TAP_TERM 200
 
 
@@ -21,6 +25,9 @@
 // Font with Apple/Windows icons for the OLED status line.
 #undef OLED_FONT_H
 #define OLED_FONT_H "keyboards/aki27/cocot46plus/keymaps/mtourne/glcdfont.c"
+// The font holds only what the OLED draws: text and the icons (saves ~620 bytes).
+#define OLED_FONT_START 0x20
+#define OLED_FONT_END 0x97
 
 // Trackball defaults (see cocot46plus.c). Scroll speed is a bit shift: higher
 // is slower. aki27's range is 1-6 (default 5); ours is 3-8 (default 7, 4x

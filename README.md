@@ -52,8 +52,8 @@ builds it on every push. `./build.sh draw` redraws the cheat sheet and live
 view (needs [uv](https://docs.astral.sh/uv/) and Chrome), and `./build.sh app`
 builds Cocot Live.
 
-The firmware fills the Pro Micro's flash to within 40 bytes, so a new feature
-needs something else removed first.
+The firmware nearly fills the Pro Micro's flash (about 530 bytes left), so
+bigger features need something else removed first.
 
 ## Credits
 

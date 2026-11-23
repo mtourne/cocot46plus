@@ -55,6 +55,14 @@ lost; use the Apple menu instead.
   `/`, `-` and Shift on the right one. Press both outer Shifts together for
   Caps Word: capitals until the end of the word (`MAX_SIZE`), shown as CAPS
   on the OLED.
+
+  How a home-row key decides between letter and modifier:
+  - Pressed within 200 ms of any other key (except a modifier), it is always
+    the letter, so fast typing never triggers a modifier (QMK's Flow Tap).
+    For Shift the window is 80 ms, so a quick capital still works.
+  - Overlapping a key on the same hand, it is the letter (Chordal Hold).
+  - Otherwise it becomes the modifier when another key is pressed and
+    released while it is held, or after 250 ms on its own.
 - **NAV:** on the right, arrows with line start/end above Left and Right,
   word jumps below them (⌥←/⌥→, Ctrl+←/→ on Windows) with Bksp between,
   page up/down and forward Delete on the inner column, and document
@@ -170,7 +178,8 @@ you type, with every layer's legend on its key; `cheatsheet.py` lists the extra
 legends (⌘/⇧ tricks, knob turns) and `legend.py` the colour key under it. It
 uses `keymap-drawer` and `uv`.
 
-Flash space is tight on the ATmega32u4: about 40 bytes are left (after turning off one-shot keys and
-limiting the layer count to 8, then adding the visualiser). If more
-room is needed, the candidates are the RGB animations, the trackball numbers
-on the OLED (about 560 bytes) or the whole OLED (about 5 KB).
+Flash space is tight on the ATmega32u4: about 530 bytes are left. Turning
+off one-shot keys, limiting the layer count to 8 and trimming the OLED font
+to the characters it draws made the room. If more is needed, the candidates
+are the trackball numbers on the OLED (about 560 bytes) or the whole OLED
+(about 5 KB).

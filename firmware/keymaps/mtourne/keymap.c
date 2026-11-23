@@ -239,13 +239,21 @@ bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     return keycode != TH_BSPC && keycode != TH_DWRD && keycode != TH_ENT && keycode != TH_TAB && keycode != TH_ESC;
 }
 
+// Home-row keys (every mod-tap except the Tab and Esc thumbs) wait 250 ms
+// before turning into their modifier on their own; thumbs keep TAPPING_TERM.
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    return IS_QK_MOD_TAP(keycode) && keycode != TH_TAB && keycode != TH_ESC ? 250 : TAPPING_TERM;
+}
+
 // Flow Tap: a home-row key pressed within FLOW_TAP_TERM of the previous key is
-// always a letter. The Shift keys use a shorter window, so a quick capital
+// always a letter. Any previous key counts except a modifier (QMK's default
+// counts only letters, Space and some punctuation, which left a home-row key
+// unprotected right after Bksp, Enter, ' or a NUM key). The Shift keys use a shorter window, so a quick capital
 // (hold H, tap a letter, release) works after a short pause or a space, while
 // H in the middle of a fast word ("the", "he") never turns into Shift.
 #define SHIFT_FLOW_TAP_TERM 80
 uint16_t get_flow_tap_term(uint16_t keycode, keyrecord_t *record, uint16_t prev_keycode) {
-    if (!is_flow_tap_key(keycode) || !is_flow_tap_key(prev_keycode)) {
+    if (!is_flow_tap_key(keycode) || IS_MODIFIER_KEYCODE(prev_keycode)) {
         return 0;
     }
     switch (keycode) {
