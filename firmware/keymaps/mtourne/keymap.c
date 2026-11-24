@@ -143,15 +143,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Delete on the inner column under PgUp/PgDn, and document start/end and
   // delete line on the pinky column. Left thumbs: Bksp (yellow, plain here so
   // it repeats when held) and delete line (green).
-  // Left hand after dlip: editing keys, plain Ctrl Alt Cmd Shift on the home
-  // row (the home-row mods' order, held in any order with the arrows, e.g.
-  // Shift+Alt+Right selects a word) and clipboard keys. They are mod keycodes
+  // Left hand: Esc and Delete top left and Enter top right (the thumbs that
+  // carry Esc and Enter are busy while Space holds NAV), plain Ctrl Alt Cmd
+  // Shift on the home row (the home-row mods' order, held in any order with the
+  // arrows, e.g. Shift + word jump selects a word), Cut Copy Paste below, and
+  // Undo in the inner bottom corner with Redo above it. They are mod keycodes
   // with no key so they go through mod_config and swap Ctrl/Win on Windows
   // like the home-row mods. The trackball scrolls while this layer is on.
   [_NAV] = LAYOUT(
-      _______, XXXXXXX, KC_DEL,  KC_ESC,  KC_ENT,  XXXXXXX,              KC_PGUP, CK_HOME, KC_UP,   CK_END,  CK_DTOP, _______,
-      _______, NV_CTL,  NV_ALT,  NV_GUI,  NV_SFT,  XXXXXXX,              KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, CK_DBOT, _______,
-      _______, CK_UNDO, CK_CUT,  CK_COPY, CK_PSTE, CK_REDO,              KC_DEL,  CK_WLFT, KC_BSPC, CK_WRGT, CK_DLIN, _______,
+      _______, KC_ESC,  KC_DEL,  XXXXXXX, XXXXXXX, KC_ENT,               KC_PGUP, CK_HOME, KC_UP,   CK_END,  CK_DTOP, _______,
+      _______, NV_CTL,  NV_ALT,  NV_GUI,  NV_SFT,  CK_REDO,              KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, CK_DBOT, _______,
+      _______, XXXXXXX, CK_CUT,  CK_COPY, CK_PSTE, CK_UNDO,              KC_DEL,  CK_WLFT, KC_BSPC, CK_WRGT, CK_DLIN, _______,
                         _______, _______, KC_BSPC, CK_DLIN, _______,     _______, _______, _______, _______, _______,
                                                    _______, _______,     _______, _______, _______, _______
   ),
@@ -311,6 +313,24 @@ bool caps_word_press_user(uint16_t keycode) {
             return true;
     }
     return false;
+}
+
+// MOUSE stays on AUTO_MOUSE_TIME (1.2 s, config.h) after the ball stops, time
+// to decide where to click, but ends MOUSE_TIME_AFTER_CLICK after a left click
+// with nothing pressed since: you're usually about to type. (Not done with
+// set_auto_mouse_timeout(), which resets QMK's mouse-layer state and would
+// drop MOUSE between the clicks of a double click.)
+#define MOUSE_TIME_AFTER_CLICK 650
+static uint16_t left_click_time;
+static bool     left_clicked = false;
+report_mouse_t  pointing_device_task_user(report_mouse_t report) {
+    if (report.x || report.y) {
+        left_clicked = false;
+    } else if (left_clicked && timer_elapsed(left_click_time) > MOUSE_TIME_AFTER_CLICK) {
+        left_clicked = false;
+        auto_mouse_layer_off();
+    }
+    return report;
 }
 
 // Keep the MOUSE layer on while the scroll key is held.
@@ -512,6 +532,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             unregister_code16(code);
         }
         return false;
+    }
+
+    // Left click released: start the shorter MOUSE time (see above). Any key
+    // press cancels it, so a double or triple click keeps MOUSE on.
+    if (record->event.pressed) {
+        left_clicked = false;
+    } else if (keycode == MS_BTN1) {
+        left_clicked    = true;
+        left_click_time = timer_read();
     }
 
     if (keycode == CK_SCRL) {

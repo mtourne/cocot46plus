@@ -67,8 +67,10 @@ lost; use the Apple menu instead.
   word jumps below them (⌥←/⌥→, Ctrl+←/→ on Windows) with Bksp between,
   page up/down and forward Delete on the inner column, and document
   start/end and delete line on the pinky column. The cursor jumps repeat
-  while held. On the left thumbs: Bksp (repeats) and delete line. On the left: editing keys, Undo/Cut/Copy/Paste/Redo,
-  and plain Ctrl, Alt, Cmd and Shift on the home row (same order as the
+  while held. On the left thumbs: Bksp (repeats) and delete line. On the
+  left: Esc and Delete top left and Enter top right, Cut/Copy/Paste on the
+  bottom row with Undo in the inner corner and Redo above it, and plain
+  Ctrl, Alt, Cmd and Shift on the home row (same order as the
   home-row mods), so you can hold them with the arrows in any order, for
   example Shift with a word jump to select a word. The cheat sheet leaves them
   out because they match each key's hold; on NAV the live view keeps the
@@ -89,7 +91,9 @@ lost; use the Apple menu instead.
   Colour, brightness -/+), trackball settings and the Boot key (top left).
   The OLED shows the short name of each FUN key you press, with the new value
   where there is one (CPI 875, ROTATE +30, SCROLL SPEED 7, OS DVORAK, MAC).
-- **MOUSE:** turns on by itself while the ball moves. Mouse buttons on the
+- **MOUSE:** turns on by itself while the ball moves, and stays on 1.2 s
+  after the ball stops, or 650 ms after a left click (you are usually about
+  to type then). Mouse buttons on the
   home row of both hands; hold K or M (index fingers, bottom row) to scroll.
   For a modifier-click, hold Cmd (left pink thumb, or hold right Tab), Alt
   (left purple thumb, or hold right Esc), or the outer Ctrl or Shift, then

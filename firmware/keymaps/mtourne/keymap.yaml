@@ -159,11 +159,11 @@ layers:
   NAV:
   - t: ▽
     type: trans
-  - ''
-  - Del
   - Esc
-  - Enter
+  - Del
   - ''
+  - ''
+  - Enter
   - PgUp
   - Home
   - ↑
@@ -177,7 +177,7 @@ layers:
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-command$$
   - $$mdi:apple-keyboard-shift$$
-  - ''
+  - Redo
   - PgDn
   - ←
   - ↓
@@ -187,11 +187,11 @@ layers:
     type: trans
   - t: ▽
     type: trans
-  - Undo
+  - ''
   - Cut
   - Copy
   - Paste
-  - Redo
+  - Undo
   - Del
   - ← word
   - Bksp

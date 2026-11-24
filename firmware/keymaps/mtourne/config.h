@@ -20,7 +20,10 @@
 
 
 // Turn on the MOUSE layer while the trackball moves (layer set in keymap.c).
+// It stays on 1.2 s after the ball stops; keymap.c ends it sooner after a
+// left click.
 #define POINTING_DEVICE_AUTO_MOUSE_ENABLE
+#define AUTO_MOUSE_TIME 1200
 
 // Font with Apple/Windows icons for the OLED status line.
 #undef OLED_FONT_H
