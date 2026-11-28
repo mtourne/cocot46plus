@@ -62,7 +62,11 @@ lost; use the Apple menu instead.
     For Shift the window is 80 ms, so a quick capital still works.
   - Overlapping a key on the same hand, it is the letter (Chordal Hold).
   - Otherwise it becomes the modifier when another key is pressed and
-    released while it is held, or after 250 ms on its own.
+    released while it is held, or after 250 ms on its own. For Ctrl, Alt and
+    Cmd that first rule needs the key to have been down at least 150 ms, so
+    a fast roll ("to": T held, O tapped right after) stays two letters while
+    a deliberate shortcut fires as usual. Shift skips this, for quick
+    capitals.
 - **NAV:** on the right, arrows with line start/end above Left and Right,
   word jumps below them (⌥←/⌥→, Ctrl+←/→ on Windows) with Bksp between,
   page up/down and forward Delete on the inner column, and document
@@ -92,7 +96,7 @@ lost; use the Apple menu instead.
   The OLED shows the short name of each FUN key you press, with the new value
   where there is one (CPI 875, ROTATE +30, SCROLL SPEED 7, OS DVORAK, MAC).
 - **MOUSE:** turns on by itself while the ball moves, and stays on 1.2 s
-  after the ball stops, or 650 ms after a left click (you are usually about
+  after the ball stops, or 300 ms after a left click (you are usually about
   to type then). Mouse buttons on the
   home row of both hands; hold K or M (index fingers, bottom row) to scroll.
   For a modifier-click, hold Cmd (left pink thumb, or hold right Tab), Alt

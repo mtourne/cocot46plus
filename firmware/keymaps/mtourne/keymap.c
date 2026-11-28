@@ -235,10 +235,28 @@ void keyboard_post_init_user(void) {
     set_auto_mouse_enable(true);
 }
 
-// Green thumbs (Bksp, Enter): NUM only after a full hold, so a fast Bksp or
-// Enter rolled into the next letter stays a Bksp or Enter.
+// Quick hold (permissive hold): a held tap-hold key becomes its hold when
+// another key is pressed and released meanwhile.
+// - Thumbs (Bksp, Delete word, Enter, Tab, Esc): never; they need a full hold,
+//   so a fast thumb key rolled into the next letter stays a tap.
+// - Home-row Ctrl, Alt, Cmd (and NUM's): only once the key has been down
+//   QUICK_HOLD_MIN, so a fast roll ("to": T held, O tapped within ~80 ms)
+//   stays two letters, while a deliberate shortcut fires as before.
+// - Shift: always, so quick capitals keep working.
+#define QUICK_HOLD_MIN 150
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
-    return keycode != TH_BSPC && keycode != TH_DWRD && keycode != TH_ENT && keycode != TH_TAB && keycode != TH_ESC;
+    switch (keycode) {
+        case TH_BSPC:
+        case TH_DWRD:
+        case TH_ENT:
+        case TH_TAB:
+        case TH_ESC:
+            return false;
+    }
+    if (IS_QK_MOD_TAP(keycode) && !(QK_MOD_TAP_GET_MODS(keycode) & MOD_LSFT)) {
+        return timer_elapsed(record->event.time) >= QUICK_HOLD_MIN;
+    }
+    return true;
 }
 
 // Home-row keys (every mod-tap except the Tab and Esc thumbs) wait 250 ms
@@ -320,7 +338,7 @@ bool caps_word_press_user(uint16_t keycode) {
 // with nothing pressed since: you're usually about to type. (Not done with
 // set_auto_mouse_timeout(), which resets QMK's mouse-layer state and would
 // drop MOUSE between the clicks of a double click.)
-#define MOUSE_TIME_AFTER_CLICK 650
+#define MOUSE_TIME_AFTER_CLICK 300
 static uint16_t left_click_time;
 static bool     left_clicked = false;
 report_mouse_t  pointing_device_task_user(report_mouse_t report) {
